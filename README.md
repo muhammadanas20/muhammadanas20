@@ -17,7 +17,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=muhammadanas20&show_icons=true&theme=radical&hide_border=true&count_private=true" height="150" alt="stats graph" />
+  <img src="https://github-readme-stats.vercel.app/api?username=muhammadanas20&show_icons=true&theme=radical&hide_border=true" height="150" alt="stats graph" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=muhammadanas20&theme=radical&hide_border=true" height="150" alt="streak graph" />
   <br>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=muhammadanas20&layout=compact&theme=radical&hide_border=true" height="150" alt="languages graph" />
@@ -26,7 +26,7 @@
 <br/>
 
 <div align="center">
- <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/output/github-contribution-grid-snake.svg" alt="snake animation" width="100%" />
+  <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/output/github-contribution-grid-snake.svg" alt="snake animation" width="100%" />
 </div>
 
 <div align="center">
