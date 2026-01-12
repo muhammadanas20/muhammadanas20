@@ -15,6 +15,7 @@
 </div>
 
 <br/>
+
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=muhammadanas20&show_icons=true&theme=radical&hide_border=true" height="150" alt="stats graph" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=muhammadanas20&theme=radical&hide_border=true" height="150" alt="streak graph" />
@@ -32,19 +33,24 @@
   <a href="https://linkedin.com/in/muhammadanas20" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
+  
   <a href="mailto:muhammadanasashfaq2006@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
+  
   <a href="https://instagram.com/anastrix.20" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
   </a>
+  
   <a href="https://facebook.com/muhammad.anas2006" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
   </a>
-  <a href="https://x.com/x" target="_blank">
+  
+  <a href="https://x.com/YOUR_USERNAME_HERE" target="_blank">
     <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
   </a>
-  <a href="https://discord.com/users/1336707201175126110/1336707203008168020" target="_blank">
+  
+  <a href="https://discord.com/users/1336707201175126110" target="_blank">
     <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
   </a>
-</div>
+</div>>
