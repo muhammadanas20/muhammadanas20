@@ -1,0 +1,20 @@
+name: Generate Achievements
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Runs once a day
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: schweinepriester/github-profile-achievements@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: muhammadanas20
+          out-path: . # Saves to root folder
+          style: flat # Clean style
