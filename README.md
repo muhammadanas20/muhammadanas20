@@ -26,7 +26,7 @@
 <br/>
 
 <div align="center">
-  <img src="https://github.com/muhammadanas20/muhammadanas20/blob/output/github-contribution-grid-snake.svg" alt="snake animation" width="100%" />
+ <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/output/github-contribution-grid-snake.svg" alt="snake animation" width="100%" />
 </div>
 
 <div align="center">
