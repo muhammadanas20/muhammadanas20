@@ -3,7 +3,7 @@
   <h3>CS Student @ FAST NUCES | Competitive Programmer</h3>
 </div>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile-summary-cards/profile-details.svg" alt="Profile Details" />
+<img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile-summary-cards/radical/profile-details.svg" alt="Profile Details" />
 </div>
 
 <div align="center">
