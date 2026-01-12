@@ -3,9 +3,8 @@
   <h3>CS Student @ FAST NUCES | Competitive Programmer</h3>
 </div>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile-achievements.svg" />
+  <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile-summary-cards/profile-details.svg" alt="Profile Details" />
 </div>
-<br/>
 
 <div align="center">
   <h3>🚀 Tech Stack</h3>
