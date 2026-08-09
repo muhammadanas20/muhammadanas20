@@ -34,7 +34,7 @@
 
 <table align="center" width="100%">
 <tr>
-<td width="55%" valign="top">
+<td width="50%" valign="top">
 
 <p><img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Education:</b> Computer Science Student at <b>FAST NUCES</b></p>
 <p><img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Competitive Programming:</b> Practicing <b>DSA & Problem Solving</b></p>
@@ -43,14 +43,12 @@
 <p><img src="https://api.iconify.design/lucide:terminal.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Environment:</b> Working with <b>Linux (Fedora)</b> & Git workflow</p>
 
 </td>
-<td width="45%" valign="top" align="center">
+<td width="50%" valign="top">
 
-```text
-🚀 Status  : Active CS Student & Developer
-📍 Location: Pakistan
-🎯 Focus   : AI/ML & Problem Solving
-⚡ Habit   : Code • Build • Repeat
-```
+<p><img src="https://api.iconify.design/lucide:rocket.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Status:</b> Active CS Student & Developer</p>
+<p><img src="https://api.iconify.design/lucide:map-pin.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Location:</b> Pakistan</p>
+<p><img src="https://api.iconify.design/lucide:target.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Focus:</b> AI/ML & Problem Solving</p>
+<p><img src="https://api.iconify.design/lucide:zap.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Habit:</b> Code • Build • Repeat</p>
 
 </td>
 </tr>
@@ -101,15 +99,15 @@
 <table align="center" width="100%">
 <tr>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=6" width="100%" alt="GitHub Stats" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=7" width="100%" alt="GitHub Stats" />
   </td>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=6" width="100%" alt="Top Languages" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=7" width="100%" alt="Top Languages" />
   </td>
 </tr>
 <tr>
   <td colspan="2" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=6" width="100%" alt="Contribution Streak" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=7" width="100%" alt="Contribution Streak" />
   </td>
 </tr>
 </table>
