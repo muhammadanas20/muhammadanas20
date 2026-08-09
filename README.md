@@ -1,8 +1,10 @@
 <div align="center">
 
-# <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="32" align="center" /> Hey there, I'm **Muhammad Anas**
+# <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="30" height="30" valign="middle" /> Hey there, I'm **Muhammad Anas**
 
-`<img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%238B5CF6" width="16" align="center" /> CS Student @ FAST NUCES` • `<img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="16" align="center" /> Competitive Programmer` • `<img src="https://api.iconify.design/lucide:bot.svg?color=%238B5CF6" width="16" align="center" /> AI & Data Science Enthusiast`
+<p align="center">
+  <b>CS Student @ FAST NUCES</b> &nbsp;•&nbsp; <b>Competitive Programmer</b> &nbsp;•&nbsp; <b>AI & Data Science Enthusiast</b>
+</p>
 
 <br>
 
@@ -28,23 +30,23 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:user.svg?color=%238B5CF6" width="24" align="center" /> About Me
+## <img src="https://api.iconify.design/lucide:user.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> About Me
 
 <table align="center" width="100%">
 <tr>
 <td width="55%" valign="top">
 
-- <img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%238B5CF6" width="18" align="center" /> **Education**: Computer Science Student at **FAST NUCES**
-- <img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="18" align="center" /> **Competitive Programming**: Practicing **DSA & Problem Solving**
-- <img src="https://api.iconify.design/lucide:brain.svg?color=%238B5CF6" width="18" align="center" /> **AI & Data Science**: Exploring **Machine Learning & Data Science**
-- <img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="18" align="center" /> **Web Development**: Building modern web applications with **JavaScript & React**
-- <img src="https://api.iconify.design/lucide:terminal.svg?color=%238B5CF6" width="18" align="center" /> **Environment**: Working with **Linux (Fedora)** & Git workflow
+<p><img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Education:</b> Computer Science Student at <b>FAST NUCES</b></p>
+<p><img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Competitive Programming:</b> Practicing <b>DSA & Problem Solving</b></p>
+<p><img src="https://api.iconify.design/lucide:brain.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>AI & Data Science:</b> Exploring <b>Machine Learning & Data Science</b></p>
+<p><img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Web Development:</b> Building modern web apps with <b>JavaScript & React</b></p>
+<p><img src="https://api.iconify.design/lucide:terminal.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Environment:</b> Working with <b>Linux (Fedora)</b> & Git workflow</p>
 
 </td>
 <td width="45%" valign="top" align="center">
 
 ```text
-🛰️ Status  : Active CS Student & Developer
+🚀 Status  : Active CS Student & Developer
 📍 Location: Pakistan
 🎯 Focus   : AI/ML & Problem Solving
 ⚡ Habit   : Code • Build • Repeat
@@ -56,14 +58,22 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:cpu.svg?color=%238B5CF6" width="24" align="center" /> Tech Stack & Arsenal
+## <img src="https://api.iconify.design/lucide:cpu.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Tech Stack & Arsenal
 
 <table align="center" width="100%">
 <tr>
-  <th width="25%" align="center"><img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="18" align="center" /> Languages</th>
-  <th width="25%" align="center"><img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="18" align="center" /> Web & Frontend</th>
-  <th width="25%" align="center"><img src="https://api.iconify.design/lucide:bot.svg?color=%238B5CF6" width="18" align="center" /> AI & Data Science</th>
-  <th width="25%" align="center"><img src="https://api.iconify.design/lucide:layers.svg?color=%238B5CF6" width="18" align="center" /> Tools & OS</th>
+  <th width="25%" align="center">
+    <img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Languages
+  </th>
+  <th width="25%" align="center">
+    <img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Web & Frontend
+  </th>
+  <th width="25%" align="center">
+    <img src="https://api.iconify.design/lucide:bot.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> AI & Data Science
+  </th>
+  <th width="25%" align="center">
+    <img src="https://api.iconify.design/lucide:layers.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Tools & OS
+  </th>
 </tr>
 <tr>
   <td align="center" valign="top">
@@ -86,20 +96,20 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:trending-up.svg?color=%238B5CF6" width="24" align="center" /> GitHub Analytics & Activity
+## <img src="https://api.iconify.design/lucide:trending-up.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> GitHub Analytics
 
 <table align="center" width="100%">
 <tr>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=5" width="100%" alt="GitHub Stats" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=6" width="100%" alt="GitHub Stats" />
   </td>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=5" width="100%" alt="Top Languages" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=6" width="100%" alt="Top Languages" />
   </td>
 </tr>
 <tr>
   <td colspan="2" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=5" width="100%" alt="Contribution Streak" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=6" width="100%" alt="Contribution Streak" />
   </td>
 </tr>
 </table>
@@ -112,7 +122,7 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:activity.svg?color=%238B5CF6" width="24" align="center" /> Contribution Activity
+## <img src="https://api.iconify.design/lucide:activity.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Contribution Activity
 
 <div align="center">
   <picture>
@@ -124,7 +134,7 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:quote.svg?color=%238B5CF6" width="24" align="center" /> Daily Dev Quote
+## <img src="https://api.iconify.design/lucide:quote.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Daily Dev Quote
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" width="100%" alt="Daily Dev Quote" />
@@ -132,7 +142,7 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="24" align="center" /> Specializations
+## <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Specializations
 
 <p align="center">
   <img src="https://img.shields.io/badge/Artificial_Intelligence-8B5CF6?style=for-the-badge&logo=probot&logoColor=white" alt="AI">
@@ -144,7 +154,7 @@
 
 ---
 
-### <img src="https://api.iconify.design/lucide:share-2.svg?color=%238B5CF6" width="24" align="center" /> Connect With Me
+## <img src="https://api.iconify.design/lucide:share-2.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Connect With Me
 
 <div align="center">
   <a href="https://www.linkedin.com/in/muhammadanas20"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
@@ -157,5 +167,5 @@
 <br>
 
 <div align="center">
-  <sub>Designed & Built by <b>Muhammad Anas</b> • Powered by Continuous Learning <img src="https://api.iconify.design/lucide:rocket.svg?color=%238B5CF6" width="14" align="center" /></sub>
+  <sub>Designed & Built by <b>Muhammad Anas</b> • Powered by Continuous Learning <img src="https://api.iconify.design/lucide:rocket.svg?color=%238B5CF6" width="14" height="14" valign="middle" /></sub>
 </div>
