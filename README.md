@@ -89,15 +89,15 @@
 <table align="center" width="100%">
 <tr>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg" width="100%" alt="GitHub Stats" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=2" width="100%" alt="GitHub Stats" />
   </td>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg" width="100%" alt="Top Languages" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=2" width="100%" alt="Top Languages" />
   </td>
 </tr>
 <tr>
   <td colspan="2" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg" width="100%" alt="Contribution Streak" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=2" width="100%" alt="Contribution Streak" />
   </td>
 </tr>
 </table>
