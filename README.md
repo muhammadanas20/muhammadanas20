@@ -1,8 +1,8 @@
 <div align="center">
 
-# 👋 Hey there, I'm **Muhammad Anas**
+# ✨ Hey there, I'm **Muhammad Anas**
 
-`<a href="https://github.com/muhammadanas20">CS Student @ FAST NUCES</a>` • `Competitive Programmer` • `AI & Data Science Enthusiast`
+`⚡ CS Student @ FAST NUCES` • `🧠 Competitive Programmer` • `🤖 AI & Data Science Enthusiast`
 
 <br>
 
@@ -28,23 +28,23 @@
 
 ---
 
-### ⚡ About Me
+### 🚀 About Me
 
 <table align="center" width="100%">
 <tr>
 <td width="55%" valign="top">
 
-- 🎓 Computer Science Student at **FAST NUCES**
-- 💻 Practicing **DSA & Competitive Programming**
-- 🤖 Exploring **Artificial Intelligence & Machine Learning**
-- 🌐 Building modern web applications with **JavaScript & React**
-- 🐧 Working with **Linux (Fedora)** & Git workflow
+- 🎓 **Education**: Computer Science Student at **FAST NUCES**
+- 🧩 **Competitive Programming**: Practicing **DSA & Problem Solving**
+- 🤖 **AI & Data Science**: Exploring **Machine Learning & Data Science**
+- ⚡ **Web Development**: Building modern web applications with **JavaScript & React**
+- 🐧 **Environment**: Working with **Linux (Fedora)** & Git workflow
 
 </td>
 <td width="45%" valign="top" align="center">
 
 ```text
-🚀 Status  : Active CS Student & Learner
+🛰️ Status  : Active CS Student & Developer
 📍 Location: Pakistan
 🎯 Focus   : AI/ML & Problem Solving
 ⚡ Habit   : Code • Build • Repeat
@@ -56,14 +56,14 @@
 
 ---
 
-### 🧰 Tech Stack
+### 🛠️ Tech Stack & Arsenal
 
 <table align="center" width="100%">
 <tr>
-  <th width="25%" align="center">💻 Languages</th>
-  <th width="25%" align="center">🌐 Web Dev</th>
+  <th width="25%" align="center">⚡ Languages</th>
+  <th width="25%" align="center">🌐 Web & Frontend</th>
   <th width="25%" align="center">🤖 AI & Data Science</th>
-  <th width="25%" align="center">🛠️ Tools & OS</th>
+  <th width="25%" align="center">⚙️ Tools & OS</th>
 </tr>
 <tr>
   <td align="center" valign="top">
@@ -86,20 +86,20 @@
 
 ---
 
-### 📊 GitHub Analytics
+### 📈 GitHub Analytics & Activity
 
 <table align="center" width="100%">
 <tr>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=3" width="100%" alt="GitHub Stats" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=4" width="100%" alt="GitHub Stats" />
   </td>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=3" width="100%" alt="Top Languages" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=4" width="100%" alt="Top Languages" />
   </td>
 </tr>
 <tr>
   <td colspan="2" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=3" width="100%" alt="Contribution Streak" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=4" width="100%" alt="Contribution Streak" />
   </td>
 </tr>
 </table>
@@ -112,7 +112,7 @@
 
 ---
 
-### 🐍 Contribution Activity
+### 👾 Contribution Activity
 
 <div align="center">
   <picture>
@@ -124,7 +124,7 @@
 
 ---
 
-### 💬 Daily Dev Quote
+### 💡 Daily Dev Quote
 
 <div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" width="100%" alt="Daily Dev Quote" />
@@ -132,7 +132,7 @@
 
 ---
 
-### 🎯 Specializations & Connect
+### 🔮 Specializations
 
 <p align="center">
   <img src="https://img.shields.io/badge/Artificial_Intelligence-8B5CF6?style=for-the-badge&logo=probot&logoColor=white" alt="AI">
@@ -141,6 +141,10 @@
   <img src="https://img.shields.io/badge/Competitive_Programming-181717?style=for-the-badge&logo=codeforces&logoColor=white" alt="Competitive Programming">
   <img src="https://img.shields.io/badge/Web_Development-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="Web Dev">
 </p>
+
+---
+
+### 📬 Connect With Me
 
 <div align="center">
   <a href="https://www.linkedin.com/in/muhammadanas20"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
@@ -153,5 +157,5 @@
 <br>
 
 <div align="center">
-  <sub>Designed & Built by <b>Muhammad Anas</b> • Inspired by Awesome GitHub Profile READMEs ⚡</sub>
+  <sub>Designed & Built by <b>Muhammad Anas</b> • Powered by Continuous Learning 🚀</sub>
 </div>
