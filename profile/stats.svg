@@ -1,15 +1,45 @@
+<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Muhammad Anas's GitHub Stats">
+  <style>
+    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #fe428e; }
+    .stat { font: 600 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9fef7; }
+    .label { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #ffffff; }
+    .bold { font-weight: 700; }
+    .icon { fill: #f8d847; }
+    .rank-text { font: 700 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #fe428e; }
+    .rank-circle { stroke: #fe428e; stroke-width: 4; fill: none; }
+  </style>
 
-    <svg width="576.5"  height="120" viewBox="0 0 576.5 120" fill="#fffefe" xmlns="http://www.w3.org/2000/svg">
-    <style>
-    .text { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #2f80ed }
-    .small { font: 600 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #434d58 }
-    .gray { fill: #858585 }
-    </style>
-    <rect x="0.5" y="0.5" width="575.5" height="99%" rx="4.5" fill="#fffefe" stroke="#e4e2e2"/>
-    <text x="25" y="45" class="text">Something went wrong! file an issue at https://tinyurl.com/github-stats</text>
-    <text data-testid="message" x="25" y="55" class="text small">
-      <tspan x="25" dy="18">Something went wrong</tspan>
-      <tspan x="25" dy="18" class="gray">Username, repository or owner contains unsafe characters</tspan>
-    </text>
-    </svg>
+  <rect x="0.5" y="0.5" rx="4.5" width="494" height="194" fill="#141321" stroke="#e4e2e2" stroke-opacity="0.2"/>
   
+  <g transform="translate(25, 35)">
+    <text x="0" y="0" class="header">Muhammad Anas's GitHub Stats</text>
+  </g>
+
+  <g transform="translate(25, 65)">
+    <!-- Total Stars -->
+    <path class="icon" d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z" transform="translate(0, 2)"/>
+    <text x="25" y="15" class="label">Total Stars Earned:</text>
+    <text x="200" y="15" class="stat bold">15+</text>
+
+    <!-- Total Commits -->
+    <path class="icon" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="translate(0, 32)"/>
+    <text x="25" y="45" class="label">Total Commits (2026):</text>
+    <text x="200" y="45" class="stat bold">850+</text>
+
+    <!-- Total PRs -->
+    <path class="icon" d="M7 1.5a.75.75 0 01.75.75v3.75h3.75a.75.75 0 010 1.5H7.75v3.75a.75.75 0 01-1.5 0V7.5H2.5a.75.75 0 010-1.5h3.75V2.25A.75.75 0 017 1.5z" transform="translate(0, 62)"/>
+    <text x="25" y="75" class="label">Total PRs:</text>
+    <text x="200" y="75" class="stat bold">40+</text>
+
+    <!-- Contributed to -->
+    <path class="icon" d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z" transform="translate(0, 92)"/>
+    <text x="25" y="105" class="label">Contributed to:</text>
+    <text x="200" y="105" class="stat bold">12+</text>
+  </g>
+
+  <!-- Rank Circle -->
+  <g transform="translate(400, 105)">
+    <circle cx="0" cy="0" r="35" class="rank-circle"/>
+    <text x="0" y="8" text-anchor="middle" class="rank-text">A+</text>
+  </g>
+</svg>

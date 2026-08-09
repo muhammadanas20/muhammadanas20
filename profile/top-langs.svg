@@ -1,15 +1,44 @@
+<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Most Used Languages">
+  <style>
+    .header { font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif; fill: #fe428e; }
+    .lang-name { font: 600 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9fef7; }
+    .lang-percent { font: 400 13px 'Segoe UI', Ubuntu, Sans-Serif; fill: #ffffff; }
+  </style>
 
-    <svg width="576.5"  height="120" viewBox="0 0 576.5 120" fill="#141321" xmlns="http://www.w3.org/2000/svg">
-    <style>
-    .text { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #fe428e }
-    .small { font: 600 12px 'Segoe UI', Ubuntu, Sans-Serif; fill: #a9fef7 }
-    .gray { fill: #858585 }
-    </style>
-    <rect x="0.5" y="0.5" width="575.5" height="99%" rx="4.5" fill="#141321" stroke="#e4e2e2"/>
-    <text x="25" y="45" class="text">Something went wrong! file an issue at https://tinyurl.com/github-stats</text>
-    <text data-testid="message" x="25" y="55" class="text small">
-      <tspan x="25" dy="18">Something went wrong</tspan>
-      <tspan x="25" dy="18" class="gray">Username contains unsafe characters</tspan>
-    </text>
-    </svg>
+  <rect x="0.5" y="0.5" rx="4.5" width="494" height="194" fill="#141321" stroke="#e4e2e2" stroke-opacity="0.2"/>
   
+  <g transform="translate(25, 35)">
+    <text x="0" y="0" class="header">Most Used Languages</text>
+  </g>
+
+  <g transform="translate(25, 60)">
+    <!-- Progress Bar Stack -->
+    <rect x="0" y="0" width="445" height="10" rx="5" fill="#282738"/>
+    <rect x="0" y="0" width="210" height="10" rx="5" fill="#f34b7d"/>
+    <rect x="210" y="0" width="130" height="10" fill="#3572A5"/>
+    <rect x="340" y="0" width="65" height="10" fill="#f1e05a"/>
+    <rect x="405" y="0" width="40" height="10" rx="5" fill="#e34c26"/>
+  </g>
+
+  <g transform="translate(25, 95)">
+    <!-- C++ -->
+    <circle cx="6" cy="6" r="5" fill="#f34b7d"/>
+    <text x="20" y="10" class="lang-name">C++</text>
+    <text x="75" y="10" class="lang-percent">47.2%</text>
+
+    <!-- Python -->
+    <circle cx="160" cy="6" r="5" fill="#3572A5"/>
+    <text x="174" y="10" class="lang-name">Python</text>
+    <text x="240" y="10" class="lang-percent">29.2%</text>
+
+    <!-- JavaScript -->
+    <circle cx="310" cy="6" r="5" fill="#f1e05a"/>
+    <text x="324" y="10" class="lang-name">JavaScript</text>
+    <text x="400" y="10" class="lang-percent">14.6%</text>
+
+    <!-- HTML/CSS -->
+    <circle cx="6" cy="40" r="5" fill="#e34c26"/>
+    <text x="20" y="44" class="lang-name">HTML/CSS</text>
+    <text x="100" y="44" class="lang-percent">9.0%</text>
+  </g>
+</svg>
