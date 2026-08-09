@@ -1,26 +1,28 @@
 <div align="center">
 
-# 👋 Hi, I'm **Muhammad Anas**
+# 👋 Hey there, I'm **Muhammad Anas**
 
-### `CS Student @ FAST NUCES` • `Competitive Programmer` • `AI & Data Science Enthusiast`
+`<a href="https://github.com/muhammadanas20">CS Student @ FAST NUCES</a>` • `Competitive Programmer` • `AI & Data Science Enthusiast`
 
 <br>
 
-<a href="https://github.com/muhammadanas20">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-</a>
-<a href="https://www.linkedin.com/in/muhammadanas20">
-  <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-<a href="mailto:muhammadanasashfaq2006@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-</a>
-<a href="https://discord.com/users/1336707201175126110">
-  <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
-</a>
-<a href="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge">
-  <img src="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge" alt="Profile Views">
-</a>
+<p align="center">
+  <a href="https://github.com/muhammadanas20">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
+  <a href="https://www.linkedin.com/in/muhammadanas20">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="mailto:muhammadanasashfaq2006@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  <a href="https://discord.com/users/1336707201175126110">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  </a>
+  <a href="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge">
+    <img src="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge" alt="Profile Views">
+  </a>
+</p>
 
 </div>
 
@@ -59,7 +61,7 @@
 <table align="center" width="100%">
 <tr>
   <th width="25%" align="center">💻 Languages</th>
-  <th width="25%" align="center">🌐 Web Development</th>
+  <th width="25%" align="center">🌐 Web Dev</th>
   <th width="25%" align="center">🤖 AI & Data Science</th>
   <th width="25%" align="center">🛠️ Tools & OS</th>
 </tr>
@@ -89,15 +91,15 @@
 <table align="center" width="100%">
 <tr>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=2" width="100%" alt="GitHub Stats" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/stats.svg?v=3" width="100%" alt="GitHub Stats" />
   </td>
   <td width="50%" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=2" width="100%" alt="Top Languages" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/top-langs.svg?v=3" width="100%" alt="Top Languages" />
   </td>
 </tr>
 <tr>
   <td colspan="2" align="center" valign="top">
-    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=2" width="100%" alt="Contribution Streak" />
+    <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/streak.svg?v=3" width="100%" alt="Contribution Streak" />
   </td>
 </tr>
 </table>
@@ -118,6 +120,14 @@
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake.svg" />
     <img src="https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake.svg" alt="GitHub Contribution Snake" width="100%" />
   </picture>
+</div>
+
+---
+
+### 💬 Daily Dev Quote
+
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" width="100%" alt="Daily Dev Quote" />
 </div>
 
 ---
@@ -143,5 +153,5 @@
 <br>
 
 <div align="center">
-  <sub>Designed & Built by <b>Muhammad Anas</b> • Powered by Continuous Learning ⚡</sub>
+  <sub>Designed & Built by <b>Muhammad Anas</b> • Inspired by Awesome GitHub Profile READMEs ⚡</sub>
 </div>
