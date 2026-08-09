@@ -1,0 +1,106 @@
+name: Update Profile Statistics
+
+on:
+  schedule:
+    # Every day at 03:00 UTC
+    - cron: "0 3 * * *"
+
+  workflow_dispatch:
+
+  push:
+    paths:
+      - ".github/workflows/profile-stats.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # --------------------------------------------------
+      # Checkout profile repository
+      # --------------------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # --------------------------------------------------
+      # Generate GitHub statistics card
+      # --------------------------------------------------
+
+      - name: Generate GitHub Stats
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: >-
+            username=${{ github.repository_owner }}
+            &show_icons=true
+            &hide_border=true
+            &theme=radical
+            &rank_icon=github
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --------------------------------------------------
+      # Generate Top Languages card
+      # --------------------------------------------------
+
+      - name: Generate Top Languages
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: >-
+            username=${{ github.repository_owner }}
+            &layout=compact
+            &langs_count=8
+            &hide_border=true
+            &theme=radical
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --------------------------------------------------
+      # Generate Contribution Streak
+      # --------------------------------------------------
+
+      - name: Generate Streak Stats
+        uses: DenverCoder1/github-readme-streak-stats@main
+        with:
+          options: >-
+            user=${{ github.repository_owner }}
+            &theme=radical
+            &hide_border=true
+            &disable_animations=true
+            &timezone=Asia/Karachi
+          path: profile/streak.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # --------------------------------------------------
+      # Generate Contribution Snake
+      # --------------------------------------------------
+
+      - name: Generate Contribution Snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            profile/github-snake.svg?palette=github-light
+            profile/github-snake-dark.svg?palette=github-dark
+
+      # --------------------------------------------------
+      # Commit generated files
+      # --------------------------------------------------
+
+      - name: Commit generated profile assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add profile/
+
+          git diff --cached --quiet || git commit \
+            -m "chore: update profile statistics"
+
+          git push
