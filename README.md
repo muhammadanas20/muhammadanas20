@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&center=true&width=700&height=80&vCenter=true&duration=2000&pause=1000&color=8B5CF6&background=0D111700&center=true&multiline=true&lines=Computer%20Science%20Student%20%7C%20AI%20%26%20ML%20Enthusiast%20%7C%20Problem%20Solver" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&center=true&width=700&height=80&vCenter=true&duration=2000&pause=1000&color=8B5CF6&background=0D111700&multiline=true&lines=Computer%20Science%20Student%20%7C%20AI%20%26%20ML%20Enthusiast%20%7C%20Problem%20Solver" alt="Typing SVG" />
 </p>
 
 <div align="center">
@@ -28,9 +28,9 @@
 
 <div align="center">
 
-| <img align="center" src="https://github-readme-stats.vercel.app/api?username=muhammadanas20&theme=radical&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117" alt="GitHub Stats" /> | <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=muhammadanas20&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak" /> |
+| <img align="center" src="./profile/stats.svg" alt="GitHub Stats" /> | <img align="center" src="./profile/streak.svg" alt="GitHub Streak" /> |
 |---|---|
-| <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=muhammadanas20&theme=radical&layout=compact&hide_border=true&bg_color=0D1117" alt="Top Languages" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&theme=react-dark&hide_border=true&area=true&height=200" alt="Activity Graph" /> |
+| <img align="center" src="./profile/top-langs.svg" alt="Top Languages" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&theme=react-dark&hide_border=true&area=true&height=200" alt="Activity Graph" /> |
 
 </div>
 
