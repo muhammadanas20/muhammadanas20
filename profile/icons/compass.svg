@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Compass icon">
+  <defs><linearGradient id="g" x1="7" y1="5" x2="56" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#F9A8D4"/><stop offset=".48" stop-color="#C026D3"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="19" fill="#312E81" fill-opacity=".28" stroke="#FDF4FF" stroke-opacity=".6" stroke-width="1.8"/>
+  <path d="M40.8 23.2L35.5 35.5L23.2 40.8L28.5 28.5L40.8 23.2Z" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M35.5 35.5L40.8 23.2L28.5 28.5L23.2 40.8L35.5 35.5Z" fill="#67E8F9" fill-opacity=".92"/>
+  <circle cx="32" cy="32" r="3" fill="#FFFFFF"/>
+  <path d="M32 10V14M32 50V54M10 32H14M50 32H54" stroke="#FDF4FF" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

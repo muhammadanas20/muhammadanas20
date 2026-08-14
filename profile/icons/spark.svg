@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Spark icon">
+  <defs><linearGradient id="g" x1="7" y1="3" x2="57" y2="61" gradientUnits="userSpaceOnUse"><stop stop-color="#FDE68A"/><stop offset=".44" stop-color="#F59E0B"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <path d="M32 13L36.1 27.9L51 32L36.1 36.1L32 51L27.9 36.1L13 32L27.9 27.9L32 13Z" fill="#FFFDF5"/>
+  <path d="M47 13L48.5 18.5L54 20L48.5 21.5L47 27L45.5 21.5L40 20L45.5 18.5L47 13Z" fill="#FCE7F3" fill-opacity=".95"/>
+  <path d="M17 39L18.2 43.8L23 45L18.2 46.2L17 51L15.8 46.2L11 45L15.8 43.8L17 39Z" fill="#CFFAFE" fill-opacity=".95"/>
+</svg>

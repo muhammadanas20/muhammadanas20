@@ -13,7 +13,7 @@
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
-            fill: #fe428e;
+            fill: #A78BFA;
             animation: fadeInAnimation 0.8s ease-in-out forwards;
           }
           @supports(-moz-appearance: auto) {
@@ -38,7 +38,7 @@
       }
     }
     .stat {
-      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #a9fef7;
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif; fill: #22D3EE;
     }
     @supports(-moz-appearance: auto) {
       /* Selector detects Firefox */
@@ -47,7 +47,7 @@
     .bold { font-weight: 700 }
     .lang-name {
       font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
-      fill: #a9fef7;
+      fill: #22D3EE;
     }
     .stagger {
       opacity: 0;
@@ -91,9 +91,9 @@
           y="0.5"
           rx="4.5"
           height="99%"
-          stroke="#e4e2e2"
+          stroke="#E6EDF3"
           width="299"
-          fill="#141321"
+          fill="#0D1117"
           stroke-opacity="0"
         />
 

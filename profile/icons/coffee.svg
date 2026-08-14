@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Coffee cup icon">
+  <defs><linearGradient id="g" x1="7" y1="4" x2="57" y2="61" gradientUnits="userSpaceOnUse"><stop stop-color="#FB7185"/><stop offset=".5" stop-color="#F97316"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <path d="M17 28H42V37.5C42 44.4 36.4 50 29.5 50C22.6 50 17 44.4 17 37.5V28Z" fill="#FFF7ED" fill-opacity=".95"/>
+  <path d="M42 32H46C49.3 32 52 34.7 52 38C52 41.3 49.3 44 46 44H40.5" stroke="#FFF7ED" stroke-width="3" stroke-linecap="round"/>
+  <path d="M21 28C21 24 24 23 24 20C24 17 21.5 16.4 22 13M30 28C30 24 33 23 33 20C33 17 30.5 16.4 31 13M39 28C39 24 42 23 42 20C42 17 39.5 16.4 40 13" stroke="#FDE68A" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M20 54H43" stroke="#FCE7F3" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

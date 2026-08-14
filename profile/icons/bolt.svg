@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lightning bolt icon">
+  <defs><linearGradient id="g" x1="5" y1="4" x2="59" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#C026D3"/><stop offset=".45" stop-color="#7C3AED"/><stop offset="1" stop-color="#0EA5E9"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <path d="M36.5 11L18.5 35H30L27.5 53L45.5 28.5H34L36.5 11Z" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M36.5 11L30 35H18.5L36.5 11Z" fill="#FFFFFF" fill-opacity=".45"/>
+</svg>
