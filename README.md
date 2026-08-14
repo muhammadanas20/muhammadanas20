@@ -1,168 +1,134 @@
-<div align="center">
-
-# <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="30" height="30" valign="middle" /> Hey there, I'm **Muhammad Anas**
-
 <p align="center">
-  <b>CS Student @ FAST NUCES</b> &nbsp;•&nbsp; <b>Competitive Programmer</b> &nbsp;•&nbsp; <b>AI & Data Science Enthusiast</b>
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&center=true&width=700&height=80&vCenter=true&duration=2000&pause=1000&color=8B5CF6&background=0D111700&center=true&multiline=true&lines=Computer%20Science%20Student%20%7C%20AI%20%26%20ML%20Enthusiast%20%7C%20Problem%20Solver" alt="Typing SVG" />
 </p>
 
-<br>
+<div align="center">
+  
+  ![Profile Views](https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=flat-square)
+  ![GitHub followers](https://img.shields.io/github/followers/muhammadanas20?color=8B5CF6&style=flat-square)
+  ![Stars](https://img.shields.io/github/stars/muhammadanas20?color=8B5CF6&style=flat-square)
+
+</div>
+
+---
+
+## 🚀 About Me
+
+> A passionate Computer Science student at **FAST NUCES** diving deep into the world of AI, Machine Learning, and Competitive Programming. I believe in learning by building — every line of code is a step toward something amazing.
+
+- 🔭 **Currently working on:** AI/ML projects and competitive programming
+- 🌱 **Learning:** Advanced algorithms, deep learning, and system design
+- 🎯 **Goals 2025:** Contribute to open source & build impactful projects
+- 💬 **Ask me about:** Python, C++, React, or anything tech-related
+- ⚡ **Fun fact:** I'm fueled by coffee and the thrill of solving complex problems
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+| <img align="center" src="https://github-readme-stats.vercel.app/api?username=muhammadanas20&theme=radical&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117" alt="GitHub Stats" /> | <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=muhammadanas20&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak" /> |
+|---|---|
+| <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=muhammadanas20&theme=radical&layout=compact&hide_border=true&bg_color=0D1117" alt="Top Languages" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&theme=react-dark&hide_border=true&area=true&height=200" alt="Activity Graph" /> |
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+### Programming Languages
+<div align="center">
+  
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+</div>
+
+### AI & Data Science
+<div align="center">
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+
+</div>
+
+### Web & Frontend
+<div align="center">
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+</div>
+
+### Tools & Environment
+<div align="center">
+
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white)
+
+</div>
+
+---
+
+## 🎯 Specializations
+
+<div align="center">
+
+| AI & Machine Learning | Competitive Programming | Web Development |
+|:---:|:---:|:---:|
+| Building intelligent systems | DSA & problem solving | Modern web applications |
+
+</div>
+
+---
+
+## 💡 Featured Projects
+
+> Check out my pinned repositories for my best work!
+
+- 🔬 **AI Projects** — Exploring machine learning and data science
+- 💻 **CP Solutions** — Algorithm implementations and problem solutions
+- 🌐 **Web Apps** — Interactive web applications
+
+---
+
+## 🤝 Connect With Me
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadanas20)
+[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muhammadanasashfaq2006@gmail.com)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1336707201175126110)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/_m._.anas_)
+
+</div>
+
+---
+
+<div align="center">
+
+> *"Code is like humor. When you have to explain it, it's bad."* — Cory House
+
+![Snake Animation](https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake-dark.svg#gh-dark-mode-only)
+![Snake Animation](https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake.svg#gh-light-mode-only)
+
+</div>
+
+---
 
 <p align="center">
-  <a href="https://github.com/muhammadanas20">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
-  <a href="https://www.linkedin.com/in/muhammadanas20">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  <a href="mailto:muhammadanasashfaq2006@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-  </a>
-  <a href="https://discord.com/users/1336707201175126110">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
-  </a>
-  <a href="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge">
-    <img src="https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=for-the-badge" alt="Profile Views">
-  </a>
+  <img src="https://img.shields.io/badge/Built%20with%20❤-8B5CF6?style=flat-square" alt="Built with love" />
+  <img src="https://img.shields.io/badge/Powered%20by-Coffee-8B5CF6?style=flat-square" alt="Powered by coffee" />
 </p>
-
-</div>
-
----
-
-## <img src="https://api.iconify.design/lucide:user.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> About Me
-
-<table align="center" width="100%">
-<tr>
-<td width="50%" valign="top">
-
-<p><img src="https://api.iconify.design/lucide:graduation-cap.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Education:</b> Computer Science Student at <b>FAST NUCES</b></p>
-<p><img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Competitive Programming:</b> Practicing <b>DSA & Problem Solving</b></p>
-<p><img src="https://api.iconify.design/lucide:brain.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>AI & Data Science:</b> Exploring <b>Machine Learning & Data Science</b></p>
-<p><img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Web Development:</b> Building modern web apps with <b>JavaScript & React</b></p>
-<p><img src="https://api.iconify.design/lucide:terminal.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Environment:</b> Working with <b>Linux (Fedora)</b> & Git workflow</p>
-
-</td>
-<td width="50%" valign="top">
-
-<p><img src="https://api.iconify.design/lucide:rocket.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Status:</b> Active CS Student & Developer</p>
-<p><img src="https://api.iconify.design/lucide:map-pin.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Location:</b> Pakistan</p>
-<p><img src="https://api.iconify.design/lucide:target.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Focus:</b> AI/ML & Problem Solving</p>
-<p><img src="https://api.iconify.design/lucide:zap.svg?color=%238B5CF6" width="20" height="20" valign="middle" /> <b>Habit:</b> Code • Build • Repeat</p>
-
-</td>
-</tr>
-</table>
-
----
-
-## <img src="https://api.iconify.design/lucide:cpu.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Tech Stack & Arsenal
-
-<table align="center" width="100%">
-<tr>
-  <th width="25%" align="center">
-    <img src="https://api.iconify.design/lucide:code-2.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Languages
-  </th>
-  <th width="25%" align="center">
-    <img src="https://api.iconify.design/lucide:globe.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Web & Frontend
-  </th>
-  <th width="25%" align="center">
-    <img src="https://api.iconify.design/lucide:bot.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> AI & Data Science
-  </th>
-  <th width="25%" align="center">
-    <img src="https://api.iconify.design/lucide:layers.svg?color=%238B5CF6" width="18" height="18" valign="middle" /> Tools & OS
-  </th>
-</tr>
-<tr>
-  <td align="center" valign="top">
-    <img src="https://skillicons.dev/icons?i=cpp,c,python,js&perline=2" alt="Languages">
-  </td>
-  <td align="center" valign="top">
-    <img src="https://skillicons.dev/icons?i=html,css,js,react&perline=2" alt="Web Dev">
-  </td>
-  <td align="center" valign="top">
-    <img src="https://skillicons.dev/icons?i=python,sklearn&perline=2" alt="AI & ML">
-    <br><br>
-    <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy">
-    <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas">
-  </td>
-  <td align="center" valign="top">
-    <img src="https://skillicons.dev/icons?i=git,github,vscode,linux,fedora&perline=2" alt="Tools">
-  </td>
-</tr>
-</table>
-
----
-
-## <img src="https://api.iconify.design/lucide:trending-up.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> GitHub Analytics
-
-<table align="center" width="100%">
-<tr>
-  <td width="50%" align="center" valign="top">
-    <img src="https://cdn.jsdelivr.net/gh/muhammadanas20/muhammadanas20@main/profile/stats.svg" width="100%" alt="GitHub Stats" />
-  </td>
-  <td width="50%" align="center" valign="top">
-    <img src="https://cdn.jsdelivr.net/gh/muhammadanas20/muhammadanas20@main/profile/top-langs.svg" width="100%" alt="Top Languages" />
-  </td>
-</tr>
-<tr>
-  <td colspan="2" align="center" valign="top">
-    <img src="https://cdn.jsdelivr.net/gh/muhammadanas20/muhammadanas20@main/profile/streak.svg" width="100%" alt="Contribution Streak" />
-  </td>
-</tr>
-</table>
-
-<br>
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&theme=react-dark&hide_border=true&area=true" width="100%" alt="Activity Graph" />
-</div>
-
----
-
-## <img src="https://api.iconify.design/lucide:activity.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Contribution Activity
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/muhammadanas20/muhammadanas20@main/profile/github-snake-dark.svg" />
-    <img src="https://cdn.jsdelivr.net/gh/muhammadanas20/muhammadanas20@main/profile/github-snake.svg" alt="GitHub Contribution Snake" width="100%" />
-  </picture>
-</div>
-
----
-
-## <img src="https://api.iconify.design/lucide:quote.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Daily Dev Quote
-
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" width="100%" alt="Daily Dev Quote" />
-</div>
-
----
-
-## <img src="https://api.iconify.design/lucide:sparkles.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Specializations
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Artificial_Intelligence-8B5CF6?style=for-the-badge&logo=probot&logoColor=white" alt="AI">
-  <img src="https://img.shields.io/badge/Machine_Learning-FF6F00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="ML">
-  <img src="https://img.shields.io/badge/Data_Science-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Data Science">
-  <img src="https://img.shields.io/badge/Competitive_Programming-181717?style=for-the-badge&logo=codeforces&logoColor=white" alt="Competitive Programming">
-  <img src="https://img.shields.io/badge/Web_Development-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="Web Dev">
-</p>
-
----
-
-## <img src="https://api.iconify.design/lucide:share-2.svg?color=%238B5CF6" width="24" height="24" valign="middle" /> Connect With Me
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/muhammadanas20"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:muhammadanasashfaq2006@gmail.com"><img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://discord.com/users/1336707201175126110"><img src="https://img.shields.io/badge/Discord-Chat-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord"></a>
-  <a href="https://instagram.com/_m._.anas_"><img src="https://img.shields.io/badge/Instagram-Follow-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
-  <a href="https://facebook.com/muhammad.anas2006"><img src="https://img.shields.io/badge/Facebook-Connect-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"></a>
-</div>
-
-<br>
-
-<div align="center">
-  <sub>Designed & Built by <b>Muhammad Anas</b> • Powered by Continuous Learning <img src="https://api.iconify.design/lucide:rocket.svg?color=%238B5CF6" width="14" height="14" valign="middle" /></sub>
-</div>
