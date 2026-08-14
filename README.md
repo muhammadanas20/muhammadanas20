@@ -13,7 +13,7 @@
 
 <br />
 
-## <img src="./profile/icons/orbit.svg" width="30" alt="" /> Hello, world
+## <img src="./profile/icons/orbit.svg" width="30" alt="" align="middle" /> Hello, world
 
 <table>
   <tr>
@@ -23,16 +23,16 @@
       </p>
       <table>
         <tr>
-          <td width="48"><img src="./profile/icons/radar.svg" width="36" alt="" /></td>
-          <td><strong>In the lab</strong><br /><sub>AI/ML experiments and competitive-programming problem solving.</sub></td>
+          <td width="48" valign="middle" align="center"><img src="./profile/icons/radar.svg" width="36" alt="" align="middle" /></td>
+          <td valign="middle"><strong>In the lab</strong><br /><sub>AI/ML experiments and competitive-programming problem solving.</sub></td>
         </tr>
         <tr>
-          <td width="48"><img src="./profile/icons/brain.svg" width="36" alt="" /></td>
-          <td><strong>Exploring deeply</strong><br /><sub>Advanced algorithms, deep learning, and system design.</sub></td>
+          <td width="48" valign="middle" align="center"><img src="./profile/icons/brain.svg" width="36" alt="" align="middle" /></td>
+          <td valign="middle"><strong>Exploring deeply</strong><br /><sub>Advanced algorithms, deep learning, and system design.</sub></td>
         </tr>
         <tr>
-          <td width="48"><img src="./profile/icons/compass.svg" width="36" alt="" /></td>
-          <td><strong>North star</strong><br /><sub>Build useful work, contribute in the open, and keep growing.</sub></td>
+          <td width="48" valign="middle" align="center"><img src="./profile/icons/compass.svg" width="36" alt="" align="middle" /></td>
+          <td valign="middle"><strong>North star</strong><br /><sub>Build useful work, contribute in the open, and keep growing.</sub></td>
         </tr>
       </table>
     </td>
@@ -42,22 +42,22 @@
   </tr>
 </table>
 
-### <img src="./profile/icons/spark.svg" width="24" alt="" /> The little wins I enjoy
+### <img src="./profile/icons/spark.svg" width="24" alt="" align="middle" /> The little wins I enjoy
 
 <table>
   <tr>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/bolt.svg" width="38" alt="" /><br />
+      <img src="./profile/icons/bolt.svg" width="38" alt="" align="middle" /><br />
       <strong>The aha moment</strong><br />
       <sub>When a stubborn problem finally becomes a clean idea.</sub>
     </td>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/spark.svg" width="38" alt="" /><br />
+      <img src="./profile/icons/spark.svg" width="38" alt="" align="middle" /><br />
       <strong>Ideas in motion</strong><br />
       <sub>Turning a sketch, note, or curiosity into a working demo.</sub>
     </td>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/coffee.svg" width="38" alt="" /><br />
+      <img src="./profile/icons/coffee.svg" width="38" alt="" align="middle" /><br />
       <strong>Good deep dives</strong><br />
       <sub>Coffee nearby, a tough bug open, and one more thing to learn.</sub>
     </td>
@@ -66,7 +66,7 @@
 
 ---
 
-## <img src="./profile/icons/chart.svg" width="30" alt="" /> Open-source signal
+## <img src="./profile/icons/chart.svg" width="30" alt="" align="middle" /> Open-source signal
 
 <p align="center">
   <img src="./profile/stats.svg" height="185" alt="GitHub statistics" />
@@ -80,7 +80,7 @@
 
 ---
 
-## <img src="./profile/icons/layers.svg" width="30" alt="" /> Toolbox, not a wall of badges
+## <img src="./profile/icons/layers.svg" width="30" alt="" align="middle" /> Toolbox, not a wall of badges
 
 <p align="center">
   <sub><strong>LANGUAGES</strong></sub><br /><br />
@@ -107,22 +107,22 @@
 
 ---
 
-## <img src="./profile/icons/compass.svg" width="30" alt="" /> Three directions I like to explore
+## <img src="./profile/icons/compass.svg" width="30" alt="" align="middle" /> Three directions I like to explore
 
 <table>
   <tr>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/brain.svg" width="46" alt="" /><br />
+      <img src="./profile/icons/brain.svg" width="46" alt="" align="middle" /><br />
       <strong>Intelligent systems</strong><br />
       <sub>Machine learning ideas that become useful, understandable tools.</sub>
     </td>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/bolt.svg" width="46" alt="" /><br />
+      <img src="./profile/icons/bolt.svg" width="46" alt="" align="middle" /><br />
       <strong>Algorithmic thinking</strong><br />
       <sub>Breaking complex problems into elegant, testable steps.</sub>
     </td>
     <td width="33%" align="center" valign="top">
-      <img src="./profile/icons/layers.svg" width="46" alt="" /><br />
+      <img src="./profile/icons/layers.svg" width="46" alt="" align="middle" /><br />
       <strong>Human-facing web</strong><br />
       <sub>Interfaces that feel clear, responsive, and pleasant to use.</sub>
     </td>
@@ -131,7 +131,7 @@
 
 ---
 
-## <img src="./profile/icons/spark.svg" width="30" alt="" /> A work-in-progress shelf
+## <img src="./profile/icons/spark.svg" width="30" alt="" align="middle" /> A work-in-progress shelf
 
 > The pinned repositories above are where my experiments live: ideas being tested, algorithms being refined, and web experiences being shaped. Every project is a chance to make the next thing more useful than the last.
 
@@ -145,7 +145,7 @@
 
 ---
 
-## <img src="./profile/icons/link.svg" width="30" alt="" /> Say hello
+## <img src="./profile/icons/link.svg" width="30" alt="" align="middle" /> Say hello
 
 <p align="center">
   Have an interesting idea, a hard problem, or just want to talk tech? I’d be glad to connect.
@@ -171,7 +171,7 @@
 
 ---
 
-## <img src="./profile/icons/bolt.svg" width="30" alt="" /> A trail of small wins
+## <img src="./profile/icons/bolt.svg" width="30" alt="" align="middle" /> A trail of small wins
 
 <p align="center">
   <sub>One commit, one lesson, one better question at a time.</sub><br /><br />
