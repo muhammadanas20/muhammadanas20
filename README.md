@@ -1,134 +1,184 @@
+<!--
+  Visual direction: a calmer, more personal profile with a violet / cyan system.
+  The small local SVGs keep the primary icons consistent without relying on emoji.
+-->
+
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&center=true&width=700&height=80&vCenter=true&duration=2000&pause=1000&color=8B5CF6&background=0D111700&multiline=true&lines=Computer%20Science%20Student%20%7C%20AI%20%26%20ML%20Enthusiast%20%7C%20Problem%20Solver" alt="Typing SVG" />
+  <img src="./profile/hero.svg" width="100%" alt="Muhammad Anas — Computer Science student, AI and machine-learning enthusiast, and problem solver." />
 </p>
 
-<div align="center">
-  
-  ![Profile Views](https://komarev.com/ghpvc/?username=muhammadanas20&label=PROFILE+VIEWS&color=8B5CF6&style=flat-square)
-  ![GitHub followers](https://img.shields.io/github/followers/muhammadanas20?color=8B5CF6&style=flat-square)
-  ![Stars](https://img.shields.io/github/stars/muhammadanas20?color=8B5CF6&style=flat-square)
+<p align="center">
+  <sub>Computer Science student at FAST NUCES · learning in public · turning curiosity into useful software</sub>
+</p>
 
-</div>
+<br />
 
----
+## <img src="./profile/icons/orbit.svg" width="30" alt="" /> Hello, world
 
-## 🚀 About Me
+<table>
+  <tr>
+    <td width="58%" valign="top">
+      <p>
+        I’m <strong>Muhammad Anas</strong>, a Computer Science student who enjoys the space where thoughtful code, intelligent systems, and a difficult problem meet. I learn by building, asking better questions, and making the next version a little sharper than the last.
+      </p>
+      <table>
+        <tr>
+          <td width="48"><img src="./profile/icons/radar.svg" width="36" alt="" /></td>
+          <td><strong>In the lab</strong><br /><sub>AI/ML experiments and competitive-programming problem solving.</sub></td>
+        </tr>
+        <tr>
+          <td width="48"><img src="./profile/icons/brain.svg" width="36" alt="" /></td>
+          <td><strong>Exploring deeply</strong><br /><sub>Advanced algorithms, deep learning, and system design.</sub></td>
+        </tr>
+        <tr>
+          <td width="48"><img src="./profile/icons/compass.svg" width="36" alt="" /></td>
+          <td><strong>North star</strong><br /><sub>Build useful work, contribute in the open, and keep growing.</sub></td>
+        </tr>
+      </table>
+    </td>
+    <td width="42%" align="center" valign="middle">
+      <img src="./profile/about-card.svg" width="100%" alt="A stylized coding workspace showing learn, build, and repeat." />
+    </td>
+  </tr>
+</table>
 
-> A passionate Computer Science student at **FAST NUCES** diving deep into the world of AI, Machine Learning, and Competitive Programming. I believe in learning by building — every line of code is a step toward something amazing.
+### <img src="./profile/icons/spark.svg" width="24" alt="" /> The little wins I enjoy
 
-- 🔭 **Currently working on:** AI/ML projects and competitive programming
-- 🌱 **Learning:** Advanced algorithms, deep learning, and system design
-- 🎯 **Goals 2025:** Contribute to open source & build impactful projects
-- 💬 **Ask me about:** Python, C++, React, or anything tech-related
-- ⚡ **Fun fact:** I'm fueled by coffee and the thrill of solving complex problems
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-| <img align="center" src="./profile/stats.svg" alt="GitHub Stats" /> | <img align="center" src="./profile/streak.svg" alt="GitHub Streak" /> |
-|---|---|
-| <img align="center" src="./profile/top-langs.svg" alt="Top Languages" /> | <img align="center" src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&theme=react-dark&hide_border=true&area=true&height=200" alt="Activity Graph" /> |
-
-</div>
-
----
-
-## 🛠️ Tech Stack
-
-### Programming Languages
-<div align="center">
-  
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-</div>
-
-### AI & Data Science
-<div align="center">
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-
-</div>
-
-### Web & Frontend
-<div align="center">
-
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-</div>
-
-### Tools & Environment
-<div align="center">
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-FA0F00?style=for-the-badge&logo=jupyter&logoColor=white)
-
-</div>
+<table>
+  <tr>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/bolt.svg" width="38" alt="" /><br />
+      <strong>The aha moment</strong><br />
+      <sub>When a stubborn problem finally becomes a clean idea.</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/spark.svg" width="38" alt="" /><br />
+      <strong>Ideas in motion</strong><br />
+      <sub>Turning a sketch, note, or curiosity into a working demo.</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/coffee.svg" width="38" alt="" /><br />
+      <strong>Good deep dives</strong><br />
+      <sub>Coffee nearby, a tough bug open, and one more thing to learn.</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🎯 Specializations
-
-<div align="center">
-
-| AI & Machine Learning | Competitive Programming | Web Development |
-|:---:|:---:|:---:|
-| Building intelligent systems | DSA & problem solving | Modern web applications |
-
-</div>
-
----
-
-## 💡 Featured Projects
-
-> Check out my pinned repositories for my best work!
-
-- 🔬 **AI Projects** — Exploring machine learning and data science
-- 💻 **CP Solutions** — Algorithm implementations and problem solutions
-- 🌐 **Web Apps** — Interactive web applications
-
----
-
-## 🤝 Connect With Me
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammadanas20)
-[![Gmail](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:muhammadanasashfaq2006@gmail.com)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/1336707201175126110)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/_m._.anas_)
-
-</div>
-
----
-
-<div align="center">
-
-> *"Code is like humor. When you have to explain it, it's bad."* — Cory House
-
-![Snake Animation](https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake-dark.svg#gh-dark-mode-only)
-![Snake Animation](https://raw.githubusercontent.com/muhammadanas20/muhammadanas20/main/profile/github-snake.svg#gh-light-mode-only)
-
-</div>
-
----
+## <img src="./profile/icons/chart.svg" width="30" alt="" /> Open-source signal
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Built%20with%20❤-8B5CF6?style=flat-square" alt="Built with love" />
-  <img src="https://img.shields.io/badge/Powered%20by-Coffee-8B5CF6?style=flat-square" alt="Powered by coffee" />
+  <img src="./profile/stats.svg" height="185" alt="GitHub statistics" />
+  <img src="./profile/streak.svg" height="185" alt="GitHub contribution streak" />
+</p>
+
+<p align="center">
+  <img src="./profile/top-langs.svg" height="185" alt="Most-used languages" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=muhammadanas20&amp;bg_color=0D1117&amp;color=C9D1D9&amp;line=22D3EE&amp;point=FBBF24&amp;area=true&amp;area_color=8B5CF6&amp;hide_border=true&amp;height=185" height="185" alt="GitHub activity graph" />
+</p>
+
+---
+
+## <img src="./profile/icons/layers.svg" width="30" alt="" /> Toolbox, not a wall of badges
+
+<p align="center">
+  <sub><strong>LANGUAGES</strong></sub><br /><br />
+  <img src="https://skillicons.dev/icons?i=cpp,c,py,js&amp;theme=dark" alt="C++, C, Python, and JavaScript" />
+</p>
+
+<p align="center">
+  <sub><strong>AI &amp; DATA</strong></sub><br /><br />
+  <img src="https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn&amp;theme=dark" alt="PyTorch, TensorFlow, and scikit-learn" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" width="48" height="48" alt="NumPy" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" width="48" height="48" alt="Pandas" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" width="48" height="48" alt="Jupyter" />
+</p>
+
+<p align="center">
+  <sub><strong>WEB &amp; WORKFLOW</strong></sub><br /><br />
+  <img src="https://skillicons.dev/icons?i=react,html,css,linux,git,vscode&amp;theme=dark" alt="React, HTML, CSS, Linux, Git, and VS Code" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fedora/fedora-original.svg" width="48" height="48" alt="Fedora" />
+</p>
+
+<p align="center">
+  <sub>A focused toolkit for building, experimenting, and shipping — not a collection of logos for its own sake.</sub>
+</p>
+
+---
+
+## <img src="./profile/icons/compass.svg" width="30" alt="" /> Three directions I like to explore
+
+<table>
+  <tr>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/brain.svg" width="46" alt="" /><br />
+      <strong>Intelligent systems</strong><br />
+      <sub>Machine learning ideas that become useful, understandable tools.</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/bolt.svg" width="46" alt="" /><br />
+      <strong>Algorithmic thinking</strong><br />
+      <sub>Breaking complex problems into elegant, testable steps.</sub>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <img src="./profile/icons/layers.svg" width="46" alt="" /><br />
+      <strong>Human-facing web</strong><br />
+      <sub>Interfaces that feel clear, responsive, and pleasant to use.</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## <img src="./profile/icons/spark.svg" width="30" alt="" /> A work-in-progress shelf
+
+> The pinned repositories above are where my experiments live: ideas being tested, algorithms being refined, and web experiences being shaped. Every project is a chance to make the next thing more useful than the last.
+
+<table>
+  <tr>
+    <td width="33%" align="center"><strong>AI / ML experiments</strong><br /><sub>Curiosity, models, and data-driven iteration.</sub></td>
+    <td width="33%" align="center"><strong>Algorithm notebooks</strong><br /><sub>Solutions, patterns, and problem-solving practice.</sub></td>
+    <td width="33%" align="center"><strong>Web moments</strong><br /><sub>Small interfaces with a clear purpose.</sub></td>
+  </tr>
+</table>
+
+---
+
+## <img src="./profile/icons/link.svg" width="30" alt="" /> Say hello
+
+<p align="center">
+  Have an interesting idea, a hard problem, or just want to talk tech? I’d be glad to connect.
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/muhammadanas20" title="LinkedIn">
+    <img src="https://skillicons.dev/icons?i=linkedin&amp;theme=dark" height="46" alt="LinkedIn" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:muhammadanasashfaq2006@gmail.com" title="Email">
+    <img src="https://skillicons.dev/icons?i=gmail&amp;theme=dark" height="46" alt="Email" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://discord.com/users/1336707201175126110" title="Discord">
+    <img src="https://skillicons.dev/icons?i=discord&amp;theme=dark" height="46" alt="Discord" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://instagram.com/_m._.anas_" title="Instagram">
+    <img src="https://skillicons.dev/icons?i=instagram&amp;theme=dark" height="46" alt="Instagram" />
+  </a>
+</p>
+
+---
+
+## <img src="./profile/icons/bolt.svg" width="30" alt="" /> A trail of small wins
+
+<p align="center">
+  <sub>One commit, one lesson, one better question at a time.</sub><br /><br />
+  <img src="./profile/github-snake-dark.svg#gh-dark-mode-only" alt="Animated snake moving across GitHub contributions in dark mode" />
+  <img src="./profile/github-snake.svg#gh-light-mode-only" alt="Animated snake moving across GitHub contributions in light mode" />
+</p>
+
+<p align="center">
+  <sub>Designed with curiosity, fueled by coffee, and always open to the next hard problem.</sub>
 </p>

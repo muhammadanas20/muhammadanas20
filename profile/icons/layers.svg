@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Layers icon">
+  <defs><linearGradient id="g" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#312E81"/><stop offset=".55" stop-color="#7C3AED"/><stop offset="1" stop-color="#0891B2"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <path d="M32 15L49 25L32 35L15 25L32 15Z" fill="#EDE9FE" stroke="#FFFFFF" stroke-opacity=".75" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M15 33L32 43L49 33" stroke="#CFFAFE" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 41L32 51L49 41" stroke="#FDE68A" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="25" r="4.5" fill="#8B5CF6"/>
+</svg>

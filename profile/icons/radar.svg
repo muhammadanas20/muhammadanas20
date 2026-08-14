@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Radar icon">
+  <defs><linearGradient id="g" x1="7" y1="4" x2="58" y2="62" gradientUnits="userSpaceOnUse"><stop stop-color="#155E75"/><stop offset=".55" stop-color="#0891B2"/><stop offset="1" stop-color="#312E81"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <circle cx="32" cy="32" r="18" stroke="#CFFAFE" stroke-width="1.8" stroke-opacity=".48"/>
+  <circle cx="32" cy="32" r="11" stroke="#CFFAFE" stroke-width="1.8" stroke-opacity=".52"/>
+  <path d="M32 32L46 17" stroke="#F0FDFA" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M32 14V50M14 32H50" stroke="#CFFAFE" stroke-width="1.35" stroke-opacity=".52"/>
+  <path d="M32 32L45.4 18.6A18 18 0 0 1 49.3 32H32Z" fill="#67E8F9" fill-opacity=".28"/>
+  <circle cx="46" cy="18" r="3.5" fill="#FDE68A" stroke="#FFF7ED" stroke-width="1.2"/>
+  <circle cx="32" cy="32" r="3.5" fill="#ECFEFF"/>
+</svg>

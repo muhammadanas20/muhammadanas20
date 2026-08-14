@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connection link icon">
+  <defs><linearGradient id="g" x1="7" y1="5" x2="57" y2="59" gradientUnits="userSpaceOnUse"><stop stop-color="#0EA5E9"/><stop offset=".5" stop-color="#2563EB"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+  <rect x="3" y="3" width="58" height="58" rx="19" fill="url(#g)"/>
+  <path d="M28 39L24.5 42.5C20.6 46.4 14.4 46.4 10.5 42.5C6.6 38.6 6.6 32.4 10.5 28.5L20 19C23.9 15.1 30.1 15.1 34 19C35.7 20.7 36.7 22.9 36.9 25.2" stroke="#E0F2FE" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M36 25L39.5 21.5C43.4 17.6 49.6 17.6 53.5 21.5C57.4 25.4 57.4 31.6 53.5 35.5L44 45C40.1 48.9 33.9 48.9 30 45C28.3 43.3 27.3 41.1 27.1 38.8" stroke="#FDE68A" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M24 32H40" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round"/>
+</svg>
