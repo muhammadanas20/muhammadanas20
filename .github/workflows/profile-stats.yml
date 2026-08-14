@@ -60,6 +60,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # --------------------------------------------------
+      # Generate Activity Graph
+      # --------------------------------------------------
+      - name: Generate Activity Graph
+        run: |
+          curl -s -f --retry 5 --retry-delay 3 "https://github-readme-activity-graph.vercel.app/graph?username=${{ github.repository_owner }}&bg_color=0D1117&color=C9D1D9&line=22D3EE&point=FBBF24&area=true&area_color=8B5CF6&hide_border=true&height=165" -o profile/activity-graph.svg || true
+
+      # --------------------------------------------------
       # Generate Contribution Snake
       # --------------------------------------------------
       - name: Generate Contribution Snake
