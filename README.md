@@ -1,11 +1,5 @@
-<!--
-  Visual direction: a calmer, more personal profile with a violet / cyan system.
--->
-
 <p align="center">
   <img src="profile/hero.svg" width="100%" alt="Muhammad Anas — Computer Science student, AI and machine-learning enthusiast, and problem solver." />
-  <br />
-  <sub>Computer Science student at FAST NUCES · learning in public · turning curiosity into useful software</sub>
 </p>
 
 ## <img src="profile/icons/orbit.svg" width="28" alt="" align="absmiddle" /> Hello, world
@@ -14,20 +8,20 @@
   <tr>
     <td width="58%" valign="top">
       <p>
-        I’m <strong>Muhammad Anas</strong>, a Computer Science student who enjoys the space where thoughtful code, intelligent systems, and a difficult problem meet. I learn by building, asking better questions, and making the next version sharper than the last.
+        I’m <strong>Muhammad Anas</strong>, a Computer Science student at FAST NUCES. I work where code, AI, and hard problems meet — learning by building.
       </p>
       <table>
         <tr>
           <td width="42" valign="middle" align="center"><img src="profile/icons/radar.svg" width="32" alt="" align="absmiddle" /></td>
-          <td valign="middle"><strong>In the lab</strong> · <sub>AI/ML experiments and competitive-programming problem solving.</sub></td>
+          <td valign="middle"><strong>In the lab</strong> · <sub>AI/ML and competitive programming.</sub></td>
         </tr>
         <tr>
           <td width="42" valign="middle" align="center"><img src="profile/icons/brain.svg" width="32" alt="" align="absmiddle" /></td>
-          <td valign="middle"><strong>Exploring deeply</strong> · <sub>Advanced algorithms, deep learning, and system design.</sub></td>
+          <td valign="middle"><strong>Exploring</strong> · <sub>Algorithms, deep learning, and system design.</sub></td>
         </tr>
         <tr>
           <td width="42" valign="middle" align="center"><img src="profile/icons/compass.svg" width="32" alt="" align="absmiddle" /></td>
-          <td valign="middle"><strong>North star</strong> · <sub>Build useful work, contribute in the open, and keep growing.</sub></td>
+          <td valign="middle"><strong>Focus</strong> · <sub>Useful software, open source, and growth.</sub></td>
         </tr>
       </table>
     </td>
@@ -37,31 +31,9 @@
   </tr>
 </table>
 
-## <img src="profile/icons/compass.svg" width="28" alt="" align="absmiddle" /> Three directions I explore
-
-<table>
-  <tr>
-    <td width="33%" align="center" valign="top">
-      <img src="profile/icons/brain.svg" width="38" alt="" align="absmiddle" /><br />
-      <strong>Intelligent Systems</strong><br />
-      <sub>Machine learning ideas turned into practical tools.</sub>
-    </td>
-    <td width="33%" align="center" valign="top">
-      <img src="profile/icons/bolt.svg" width="38" alt="" align="absmiddle" /><br />
-      <strong>Algorithmic Thinking</strong><br />
-      <sub>Breaking tough problems into clean, efficient steps.</sub>
-    </td>
-    <td width="33%" align="center" valign="top">
-      <img src="profile/icons/layers.svg" width="38" alt="" align="absmiddle" /><br />
-      <strong>Human-Facing Web</strong><br />
-      <sub>Interfaces that feel fast, responsive, and intuitive.</sub>
-    </td>
-  </tr>
-</table>
-
 ---
 
-## <img src="profile/icons/bolt.svg" width="28" alt="" align="absmiddle" /> LeetCode · proof through practice
+## <img src="profile/icons/bolt.svg" width="28" alt="" align="absmiddle" /> LeetCode
 
 <p align="center">
   <a href="https://leetcode.com/u/muhammadanas20/">
@@ -76,7 +48,7 @@
 </p>
 
 <details>
-  <summary><strong>Recently accepted</strong> · open the latest problems</summary>
+  <summary><strong>Recently accepted</strong></summary>
   <br />
 <!-- LEETCODE_RECENT_START -->
 <p align="center">
@@ -90,11 +62,9 @@
 <!-- LEETCODE_RECENT_END -->
 </details>
 
-<sub>Cards are generated from public LeetCode data and stored in this repository—no live widget, no third-party image server, and no extra delay when the profile opens.</sub>
-
 ---
 
-## <img src="profile/icons/chart.svg" width="28" alt="" align="absmiddle" /> Open-source signal
+## <img src="profile/icons/chart.svg" width="28" alt="" align="absmiddle" /> GitHub
 
 <p align="center">
   <img src="profile/stats.svg" height="165" alt="GitHub statistics" />
@@ -132,20 +102,6 @@
 </table>
 
 ---
-
-## <img src="profile/icons/spark.svg" width="28" alt="" align="absmiddle" /> Work-in-progress shelf
-
-<table>
-  <tr>
-    <td width="33%" align="center"><strong>AI / ML experiments</strong><br /><sub>Curiosity, models &amp; data-driven iteration</sub></td>
-    <td width="33%" align="center"><strong>Algorithm notebooks</strong><br /><sub>Solutions, patterns &amp; problem solving</sub></td>
-    <td width="33%" align="center"><strong>Web moments</strong><br /><sub>Focused, clean interfaces</sub></td>
-  </tr>
-</table>
-
----
-
-## <img src="profile/icons/bolt.svg" width="28" alt="" align="absmiddle" /> A trail of small wins
 
 <p align="center">
   <img src="profile/github-snake-dark.svg#gh-dark-mode-only" alt="Animated snake moving across GitHub contributions in dark mode" />
