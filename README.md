@@ -61,6 +61,39 @@
 
 ---
 
+## <img src="profile/icons/bolt.svg" width="28" alt="" align="absmiddle" /> LeetCode · proof through practice
+
+<p align="center">
+  <a href="https://leetcode.com/u/muhammadanas20/">
+    <img src="profile/leetcode-overview.svg" width="100%" alt="LeetCode overview: problems solved, difficulty breakdown, rank, acceptance, activity, and latest badge" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://leetcode.com/u/muhammadanas20/">
+    <img src="profile/leetcode-skills.svg" width="100%" alt="LeetCode languages, strongest algorithm topics, and community activity" />
+  </a>
+</p>
+
+<details>
+  <summary><strong>Recently accepted</strong> · open the latest problems</summary>
+  <br />
+<!-- LEETCODE_RECENT_START -->
+<p align="center">
+<a href="https://leetcode.com/problems/distribute-elements-into-two-arrays-i/"><code>Distribute Elements Into Two Arrays I</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/cinema-seat-allocation/"><code>Cinema Seat Allocation</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/find-the-largest-almost-missing-integer/"><code>Find the Largest Almost Missing Integer</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-v/"><code>Stone Game V</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-ix/"><code>Stone Game IX</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/longest-palindromic-substring/"><code>Longest Palindromic Substring</code></a>
+</p>
+<!-- LEETCODE_RECENT_END -->
+</details>
+
+<sub>Cards are generated from public LeetCode data and stored in this repository—no live widget, no third-party image server, and no extra delay when the profile opens.</sub>
+
+---
+
 ## <img src="profile/icons/chart.svg" width="28" alt="" align="absmiddle" /> Open-source signal
 
 <p align="center">

@@ -1,0 +1,31 @@
+# Rename this file to leetcode-stats.yml to activate it as a GitHub Actions workflow.
+name: Update LeetCode Statistics
+
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-leetcode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate LeetCode profile cards
+        run: python3 scripts/update_leetcode.py
+
+      - name: Commit generated LeetCode assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/leetcode-data.json \
+                  profile/leetcode-overview.svg \
+                  profile/leetcode-skills.svg \
+                  README.md
+          git diff --cached --quiet || git commit -m "chore: update LeetCode statistics"
+          git push
