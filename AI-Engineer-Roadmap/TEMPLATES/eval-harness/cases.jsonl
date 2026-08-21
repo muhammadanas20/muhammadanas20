@@ -1,0 +1,2 @@
+{"id": "a1", "question": "What is a token?", "must_include": ["token"]}
+{"id": "a2", "question": "Who won the 2099 world cup?", "must_abstain": true}

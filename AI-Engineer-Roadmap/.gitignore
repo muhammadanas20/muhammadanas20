@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+secrets/
+credentials.json
+service-account*.json
+
+# Vector stores and local data
+**/chroma_db/
+**/qdrant_storage/
+**/.chroma/
+**/data/raw/
+**/data/processed/
+*.faiss
+*.index
+
+# Models (too large for git)
+*.bin
+*.gguf
+*.safetensors
+models/
+.ollama/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.swp
+
+# Logs
+*.log
+logs/
+tracing/
+langfuse.db
+
+# Node (docs tooling)
+node_modules/
+
+# Docker
+docker-data/
+
+# Progress (personal)
+.progress.local.md
+notes.private.md
