@@ -1,0 +1,2 @@
+{"id": "q1", "question": "What is this document about?", "must_abstain": false}
+{"id": "q2", "question": "What is the refund policy of a company not in this PDF?", "must_abstain": true}

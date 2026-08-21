@@ -1,0 +1,29 @@
+name: ci
+on:
+  pull_request:
+  push:
+    paths:
+      - "AI-Engineer-Roadmap/**"
+      - ".github/workflows/ci.yml"
+jobs:
+  examples:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: AI-Engineer-Roadmap
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run pure-python examples
+        run: |
+          python EXAMPLES/token_count.py
+          python EXAMPLES/cosine.py
+          python EXAMPLES/rrf.py
+          python phases/05-llm-fundamentals/code/structured.py
+          python phases/05-llm-fundamentals/code/tools.py
+          python phases/08-rag/code/naive_rag.py
+          python phases/08-rag/code/rrf.py
+          python phases/09-agents/code/loop.py
+          python phases/09-agents/code/safe_sql.py
