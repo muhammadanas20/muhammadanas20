@@ -129,8 +129,37 @@ def esc(value: object) -> str:
     return html.escape(str(value), quote=True)
 
 
-def pill(x: int, y: int, width: int, text: str, color: str) -> str:
-    return f'''<g transform="translate({x} {y})"><rect width="{width}" height="29" rx="14.5" fill="{color}" fill-opacity=".10" stroke="{color}" stroke-opacity=".28"/><circle cx="15" cy="14.5" r="3" fill="{color}"/><text x="26" y="19" class="pill">{esc(text)}</text></g>'''
+PILL_FONT_SIZE = 11
+PILL_TEXT_START = 26
+PILL_TEXT_END_PADDING = 13
+PILL_TEXT_GAP = 10
+
+
+def estimated_text_width(text: object) -> int:
+    """Return a conservative width for semibold 11px pill text.
+
+    SVG text metrics vary slightly with the font available on the viewer. Using a
+    conservative estimate keeps labels and their counts from touching or crossing
+    the pill border even when Segoe UI falls back to Arial.
+    """
+    return math.ceil(len(str(text)) * PILL_FONT_SIZE * 0.6)
+
+
+def pill_width(label: str, count: object, minimum: int = 0) -> int:
+    count_label = f"· {count}"
+    content_width = (
+        PILL_TEXT_START
+        + estimated_text_width(label)
+        + PILL_TEXT_GAP
+        + estimated_text_width(count_label)
+        + PILL_TEXT_END_PADDING
+    )
+    return max(minimum, content_width)
+
+
+def pill(x: int, y: int, width: int, label: str, count: object, color: str) -> str:
+    """Render a pill with its count right-aligned safely inside the border."""
+    return f'''<g transform="translate({x} {y})"><rect width="{width}" height="29" rx="14.5" fill="{color}" fill-opacity=".10" stroke="{color}" stroke-opacity=".28"/><circle cx="15" cy="14.5" r="3" fill="{color}"/><text x="{PILL_TEXT_START}" y="19" class="pill">{esc(label)}</text><text x="{width - PILL_TEXT_END_PADDING}" y="19" text-anchor="end" class="pill pill-count">· {esc(count)}</text></g>'''
 
 
 def overview_svg(data: dict) -> str:
@@ -171,25 +200,34 @@ def overview_svg(data: dict) -> str:
 
 def skills_svg(data: dict) -> str:
     language_colors = ["#8b5cf6", "#22d3ee", "#fbbf24", "#fb7185"]
-    languages = "".join(
-        pill(32 + i * 137, 75, 125, f"{item['name']} · {item['solved']}", language_colors[i % 4])
-        for i, item in enumerate(data.get("languages", [])[:4])
-    )
+    language_chips, x = [], 32
+    for index, item in enumerate(data.get("languages", [])[:4]):
+        width = pill_width(item["name"], item["solved"], minimum=125)
+        if x + width > 868:
+            break
+        language_chips.append(
+            pill(x, 75, width, item["name"], item["solved"], language_colors[index % 4])
+        )
+        x += width + 12
+    languages = "".join(language_chips)
+
     sections = []
     section_colors = {"Advanced": "#fb7185", "Intermediate": "#fbbf24", "Fundamental": "#22d3a6"}
     for row, level in enumerate(("Advanced", "Intermediate", "Fundamental")):
         items = data.get("skills", {}).get(level, [])[:5]
         chips, x = [], 165
         for item in items:
-            width = min(180, 38 + len(item["name"]) * 6)
-            chips.append(pill(x, 124 + row * 47, width, f"{item['name']} · {item['solved']}", section_colors[level]))
-            x += width + 10
-            if x > 850:
+            width = pill_width(item["name"], item["solved"])
+            if x + width > 868:
                 break
+            chips.append(
+                pill(x, 124 + row * 47, width, item["name"], item["solved"], section_colors[level])
+            )
+            x += width + 10
         sections.append(f'<text x="32" y="{143 + row * 47}" class="level" fill="{section_colors[level]}">{level.upper()}</text>' + "".join(chips))
     community = data.get("community", {})
     footer = f"{community.get('views', 0)} profile views  ·  {community.get('solutions', 0)} solutions shared  ·  {community.get('discuss', 0)} discussions  ·  {community.get('reputation', 0)} reputation"
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="305" viewBox="0 0 900 305" role="img" aria-labelledby="title desc"><title id="title">LeetCode languages and skills</title><desc id="desc">Strongest topics and languages used by Muhammad Anas.</desc><style>.title{{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#f8fafc}}.sub{{font:400 11px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}}.pill{{font:600 11px 'Segoe UI',Arial,sans-serif;fill:#dbe4f3}}.level{{font:700 10px 'Segoe UI',Arial,sans-serif;letter-spacing:1px}}</style><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#121a31"/></linearGradient></defs><rect x=".5" y=".5" width="899" height="304" rx="18" fill="url(#bg)" stroke="#293552"/><text x="32" y="35" class="title">Languages &amp; algorithmic depth</text><text x="32" y="54" class="sub">Problems solved by language · strongest topic signals</text>{languages}<path d="M32 111h836" stroke="#293552"/>{''.join(sections)}<path d="M32 270h836" stroke="#293552"/><text x="450" y="290" text-anchor="middle" class="sub">{esc(footer)}</text></svg>'''
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="305" viewBox="0 0 900 305" role="img" aria-labelledby="title desc"><title id="title">LeetCode languages and skills</title><desc id="desc">Strongest topics and languages used by Muhammad Anas.</desc><style>.title{{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#f8fafc}}.sub{{font:400 11px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}}.pill{{font:600 11px 'Segoe UI',Arial,sans-serif;fill:#dbe4f3}}.pill-count{{font-variant-numeric:tabular-nums}}.level{{font:700 10px 'Segoe UI',Arial,sans-serif;letter-spacing:1px}}</style><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#121a31"/></linearGradient></defs><rect x=".5" y=".5" width="899" height="304" rx="18" fill="url(#bg)" stroke="#293552"/><text x="32" y="35" class="title">Languages &amp; algorithmic depth</text><text x="32" y="54" class="sub">Problems solved by language · strongest topic signals</text>{languages}<path d="M32 111h836" stroke="#293552"/>{''.join(sections)}<path d="M32 270h836" stroke="#293552"/><text x="450" y="290" text-anchor="middle" class="sub">{esc(footer)}</text></svg>'''
 
 
 def write_recent(data: dict) -> None:
