@@ -31,24 +31,6 @@
   </tr>
 </table>
 
----
-
-## <img src="profile/icons/spark.svg" width="28" alt="" align="absmiddle" /> Free AI Engineer Bootcamp
-
-<p>
-  <a href="./AI-Engineer-Roadmap/"><strong>AI Engineer Roadmap</strong></a>
-  — a production-first course from Python to RAG, agents, MCP, LLMOps, and a capstone.
-  Built like a $5,000 bootcamp. Priced like GitHub.
-</p>
-
-<p>
-  <a href="./AI-Engineer-Roadmap/ROADMAP.md">Roadmap</a> ·
-  <a href="./AI-Engineer-Roadmap/90_DAY_PLAN.md">90 days</a> ·
-  <a href="./AI-Engineer-Roadmap/180_DAY_PLAN.md">180 days</a> ·
-  <a href="./AI-Engineer-Roadmap/INTERVIEW_PREP.md">Interviews</a>
-</p>
-
----
 
 ## <img src="profile/icons/bolt.svg" width="28" alt="" align="absmiddle" /> LeetCode
 
