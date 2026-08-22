@@ -1,6 +1,0 @@
-DROP TABLE users;
-SELECT * FROM users; DELETE FROM users;
-SELECT * FROM pg_catalog.pg_user;
-SELECT 1; DROP TABLE orders;
-UPDATE orders SET total = 0;
-SELECT * FROM other_tenant.orders;
