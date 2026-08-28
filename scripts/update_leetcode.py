@@ -4,6 +4,12 @@
 The checked-in JSON is also a fallback: if LeetCode is temporarily unavailable, the
 last good cards remain usable and the profile never depends on a third-party image
 server at page-view time.
+
+Network strategy: the GraphQL endpoint is tried first (with retries and rotating
+user agents). If it keeps failing, the public profile page is scraped instead,
+because LeetCode sometimes blocks data-center IPs on /graphql/ while the HTML page
+still loads. If both paths fail, the script exits non-zero so the workflow run is
+visibly red instead of quietly keeping stale cards and reporting success.
 """
 from __future__ import annotations
 
@@ -12,12 +18,26 @@ import html
 import json
 import math
 import pathlib
+import re
+import sys
+import time
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "profile" / "leetcode-data.json"
 USERNAME = "muhammadanas20"
 ENDPOINT = "https://leetcode.com/graphql/"
+PROFILE_PAGE = f"https://leetcode.com/u/{USERNAME}/"
+
+# LeetCode's edge is inconsistent about which clients it lets through, so rotate a
+# few user agents on every retry attempt.
+USER_AGENTS = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
+    "github-profile-stats/1.0",
+)
+RETRIES = 3
+RETRY_DELAY_SECONDS = 10
 
 PROFILE_QUERY = """
 query profile($username: String!) {
@@ -55,19 +75,38 @@ query recent($username: String!, $limit: Int!) {
 """
 
 
-def graphql(query: str, variables: dict) -> dict:
-    body = json.dumps({"query": query, "variables": variables}).encode()
+def _request(url: str, data: bytes | None, user_agent: str) -> bytes:
     request = urllib.request.Request(
-        ENDPOINT,
-        data=body,
+        url,
+        data=data,
         headers={
             "Content-Type": "application/json",
-            "Referer": f"https://leetcode.com/u/{USERNAME}/",
-            "User-Agent": "github-profile-stats/1.0",
+            "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+            "Referer": PROFILE_PAGE,
+            "User-Agent": user_agent,
         },
     )
     with urllib.request.urlopen(request, timeout=30) as response:
-        result = json.load(response)
+        return response.read()
+
+
+def _request_with_retries(url: str, data: bytes | None = None) -> bytes:
+    """Try every user agent, with backoff, so transient or UA-based blocks recover."""
+    attempts = USER_AGENTS * RETRIES
+    last_error: Exception | None = None
+    for attempt, user_agent in enumerate(attempts):
+        try:
+            return _request(url, data, user_agent)
+        except Exception as error:  # URLError, HTTPError, TLS resets, timeouts...
+            last_error = error
+            if attempt + 1 < len(attempts):
+                time.sleep(RETRY_DELAY_SECONDS)
+    raise RuntimeError(f"LeetCode unreachable after {len(attempts)} attempts: {last_error}")
+
+
+def graphql(query: str, variables: dict) -> dict:
+    body = json.dumps({"query": query, "variables": variables}).encode()
+    result = json.loads(_request_with_retries(ENDPOINT, body))
     if result.get("errors"):
         raise RuntimeError(result["errors"][0].get("message", "LeetCode GraphQL error"))
     return result["data"]
@@ -78,9 +117,13 @@ def keyed(items: list[dict], value: str = "count") -> dict:
 
 
 def fetch(current: dict) -> dict:
-    profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
-    skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
-    recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
+    try:
+        profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
+        skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
+        recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
+    except Exception as error:
+        print(f"GraphQL fetch failed ({error}); falling back to the public profile page", file=sys.stderr)
+        return parse_profile_page(current)
     user = profile_data["matchedUser"]
     stats = user["submitStatsGlobal"]
     accepted = keyed(stats["acSubmissionNum"], "submissions")
@@ -122,6 +165,130 @@ def fetch(current: dict) -> dict:
             {"title": item["title"], "slug": item["titleSlug"]}
             for item in recent_data.get("recentAcSubmissionList") or []
         ],
+    }
+
+
+def _collect(node: object, wanted: set[str], found: dict[str, list]) -> None:
+    """Collect every occurrence of the wanted key names from a nested JSON payload."""
+    if isinstance(node, dict):
+        for key, value in node.items():
+            if key in wanted:
+                found.setdefault(key, []).append(value)
+            _collect(value, wanted, found)
+    elif isinstance(node, list):
+        for item in node:
+            _collect(item, wanted, found)
+
+
+def _pick(candidates: list, predicate):
+    for candidate in candidates:
+        try:
+            if predicate(candidate):
+                return candidate
+        except TypeError:
+            continue
+    return None
+
+
+def parse_profile_page(current: dict) -> dict:
+    """Assemble the stats dict from the public profile page payload.
+
+    LeetCode renders the profile server-side with a `__NEXT_DATA__` JSON blob that
+    carries the same fields as the GraphQL endpoint. We scan for the well-known key
+    names (which survive minor payload reshuffles) and fall back to the last good
+    values for anything the payload does not expose.
+    """
+    raw = _request_with_retries(PROFILE_PAGE)
+    match = re.search(
+        r'<script[^>]*id="__NEXT_DATA__"[^>]*>(.*?)</script>',
+        raw.decode("utf-8", "replace"),
+        re.DOTALL,
+    )
+    if not match:
+        raise RuntimeError("profile page has no __NEXT_DATA__ payload (page blocked or layout changed)")
+    payload = json.loads(match.group(1))
+    wanted = {
+        "profile",
+        "allQuestionsCount",
+        "submitStatsGlobal",
+        "problemsSolvedBeatsStats",
+        "languageProblemCount",
+        "tagProblemCounts",
+        "userCalendar",
+        "recentAcSubmissionList",
+        "badges",
+    }
+    found: dict[str, list] = {}
+    _collect(payload, wanted, found)
+
+    stats = _pick(found.get("submitStatsGlobal", []), lambda v: isinstance(v, dict) and "acSubmissionNum" in v)
+    calendar = _pick(found.get("userCalendar", []), lambda v: isinstance(v, dict) and "submissionCalendar" in v)
+    if not stats or not calendar:
+        raise RuntimeError("profile page payload is missing submitStatsGlobal/userCalendar")
+
+    def looks_like_profile(v):
+        return isinstance(v, dict) and sum(
+            key in v for key in ("ranking", "postViewCount", "solutionCount", "reputation")
+        ) >= 2
+
+    profile = _pick(found.get("profile", []), looks_like_profile) or {}
+    questions = _pick(found.get("allQuestionsCount", []), lambda v: isinstance(v, list) and len(v) >= 3)
+    beats = _pick(found.get("problemsSolvedBeatsStats", []), lambda v: isinstance(v, list) and len(v) >= 3)
+    languages = _pick(found.get("languageProblemCount", []), lambda v: isinstance(v, list) and v)
+    tags = _pick(found.get("tagProblemCounts", []), lambda v: isinstance(v, dict) and "fundamental" in v)
+    recent = _pick(
+        found.get("recentAcSubmissionList", []),
+        lambda v: isinstance(v, list) and any(isinstance(i, dict) and "titleSlug" in i for i in v),
+    )
+    badges = _pick(
+        found.get("badges", []),
+        lambda v: isinstance(v, list) and any(isinstance(i, dict) and "displayName" in i for i in v),
+    ) or []
+
+    accepted = keyed(stats.get("acSubmissionNum") or [], "submissions")
+    submitted = keyed(stats.get("totalSubmissionNum") or [], "submissions")
+    submissions_by_day = json.loads(calendar.get("submissionCalendar") or "{}")
+    newest_badge = max(badges, key=lambda badge: int(badge.get("creationDate") or 0), default={})
+    community = current.get("community", {})
+
+    return {
+        "username": USERNAME,
+        "ranking": profile.get("ranking") or current.get("ranking", 0),
+        "solved": keyed(stats.get("acSubmissionNum") or []),
+        "questions": keyed(questions) if questions else current.get("questions", {}),
+        "beats": (keyed(beats, "percentage") if beats else {}) or current.get("beats", {}),
+        "acceptance": round(100 * accepted.get("All", 0) / max(submitted.get("All", 1), 1), 2),
+        "submissionsYear": sum(int(value) for value in submissions_by_day.values()),
+        "activeDays": calendar.get("totalActiveDays", 0),
+        "maxStreak": calendar.get("streak", 0),
+        "community": {
+            "views": profile.get("postViewCount", community.get("views", 0)),
+            "solutions": profile.get("solutionCount", community.get("solutions", 0)),
+            "discuss": profile.get("categoryDiscussCount", community.get("discuss", 0)),
+            "reputation": profile.get("reputation", community.get("reputation", 0)),
+        },
+        "languages": (
+            [{"name": item["languageName"], "solved": item["problemsSolved"]} for item in languages]
+            if languages
+            else current.get("languages", [])
+        ),
+        "skills": (
+            {
+                level.title(): [
+                    {"name": item["tagName"], "solved": item["problemsSolved"]}
+                    for item in tags.get(level, [])
+                ]
+                for level in ("advanced", "intermediate", "fundamental")
+            }
+            if tags
+            else current.get("skills", {})
+        ),
+        "badge": newest_badge.get("displayName") or current.get("badge", "Keep solving"),
+        "recent": (
+            [{"title": item["title"], "slug": item["titleSlug"]} for item in recent]
+            if recent
+            else current.get("recent", [])
+        ),
     }
 
 
@@ -234,7 +401,7 @@ def write_recent(data: dict) -> None:
     lines = ["<!-- LEETCODE_RECENT_START -->", "<p align=\"center\">"]
     for index, item in enumerate(data.get("recent", [])[:6]):
         separator = " &nbsp;·&nbsp; " if index else ""
-        lines.append(f'{separator}<a href="https://leetcode.com/problems/{esc(item["slug"])}/"><code>{esc(item["title"])}</code></a>')
+        lines.append(f'{separator}<a href="https://leetcode.com/problems/{esc(item["slug"])}"><code>{esc(item["title"])}</code></a>')
     lines.extend(["</p>", "<!-- LEETCODE_RECENT_END -->"])
     readme_path = ROOT / "README.md"
     readme = readme_path.read_text()
@@ -253,10 +420,15 @@ def main() -> None:
     if not args.offline:
         try:
             data = fetch(data)
-            DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-            print("Fetched current public LeetCode statistics")
         except Exception as error:
-            print(f"LeetCode fetch unavailable; using last good snapshot: {error}")
+            print(f"ERROR: LeetCode refresh failed: {error}", file=sys.stderr)
+            print(
+                "ERROR: last good snapshot left untouched; exiting non-zero so the run is visibly red.",
+                file=sys.stderr,
+            )
+            raise SystemExit(1)
+        DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+        print("Fetched current public LeetCode statistics")
     (ROOT / "profile" / "leetcode-overview.svg").write_text(overview_svg(data))
     (ROOT / "profile" / "leetcode-skills.svg").write_text(skills_svg(data))
     write_recent(data)

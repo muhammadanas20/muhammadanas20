@@ -1,31 +1,124 @@
 {
   "username": "muhammadanas20",
-  "ranking": 1400638,
-  "solved": {"All": 121, "Easy": 55, "Medium": 55, "Hard": 11},
-  "questions": {"All": 4029, "Easy": 960, "Medium": 2103, "Hard": 966},
-  "beats": {"Easy": 78.54, "Medium": 75.56, "Hard": 64.97},
-  "acceptance": 90.48,
-  "submissionsYear": 210,
-  "activeDays": 57,
-  "maxStreak": 51,
-  "community": {"views": 30, "solutions": 5, "discuss": 0, "reputation": 0},
+  "ranking": 1319449,
+  "solved": {
+    "All": 129,
+    "Easy": 57,
+    "Medium": 58,
+    "Hard": 14
+  },
+  "questions": {
+    "All": 4033,
+    "Easy": 961,
+    "Medium": 2105,
+    "Hard": 967
+  },
+  "beats": {
+    "Easy": 79.31,
+    "Medium": 76.46,
+    "Hard": 70.15
+  },
+  "acceptance": 90.83,
+  "submissionsYear": 218,
+  "activeDays": 65,
+  "maxStreak": 59,
+  "community": {
+    "views": 30,
+    "solutions": 5,
+    "discuss": 0,
+    "reputation": 0
+  },
   "languages": [
-    {"name": "C++", "solved": 102},
-    {"name": "C", "solved": 19},
-    {"name": "Python3", "solved": 1}
+    {
+      "name": "C++",
+      "solved": 110
+    },
+    {
+      "name": "C",
+      "solved": 19
+    },
+    {
+      "name": "Python3",
+      "solved": 1
+    }
   ],
   "skills": {
-    "Advanced": [{"name": "Dynamic Programming", "solved": 16}, {"name": "Game Theory", "solved": 7}, {"name": "Divide and Conquer", "solved": 5}],
-    "Intermediate": [{"name": "Math", "solved": 22}, {"name": "Tree", "solved": 21}, {"name": "Binary Tree", "solved": 20}],
-    "Fundamental": [{"name": "Array", "solved": 64}, {"name": "Two Pointers", "solved": 23}, {"name": "String", "solved": 18}]
+    "Advanced": [
+      {
+        "name": "Dynamic Programming",
+        "solved": 17
+      },
+      {
+        "name": "Game Theory",
+        "solved": 9
+      },
+      {
+        "name": "Divide and Conquer",
+        "solved": 5
+      }
+    ],
+    "Intermediate": [
+      {
+        "name": "Math",
+        "solved": 26
+      },
+      {
+        "name": "Tree",
+        "solved": 21
+      },
+      {
+        "name": "Binary Tree",
+        "solved": 20
+      }
+    ],
+    "Fundamental": [
+      {
+        "name": "Array",
+        "solved": 67
+      },
+      {
+        "name": "Two Pointers",
+        "solved": 24
+      },
+      {
+        "name": "String",
+        "solved": 22
+      }
+    ]
   },
   "badge": "50 Days Badge 2026",
   "recent": [
-    {"title": "Distribute Elements Into Two Arrays I", "slug": "distribute-elements-into-two-arrays-i"},
-    {"title": "Cinema Seat Allocation", "slug": "cinema-seat-allocation"},
-    {"title": "Find the Largest Almost Missing Integer", "slug": "find-the-largest-almost-missing-integer"},
-    {"title": "Stone Game V", "slug": "stone-game-v"},
-    {"title": "Stone Game IX", "slug": "stone-game-ix"},
-    {"title": "Longest Palindromic Substring", "slug": "longest-palindromic-substring"}
+    {
+      "title": "Lexicographically Smallest Palindromic Permutation Greater Than Target",
+      "slug": "lexicographically-smallest-palindromic-permutation-greater-than-target"
+    },
+    {
+      "title": "Lexicographically Smallest Permutation Greater Than Target",
+      "slug": "lexicographically-smallest-permutation-greater-than-target"
+    },
+    {
+      "title": "Shortest and Lexicographically Smallest Beautiful String",
+      "slug": "shortest-and-lexicographically-smallest-beautiful-string"
+    },
+    {
+      "title": "Smallest Missing Multiple of K",
+      "slug": "smallest-missing-multiple-of-k"
+    },
+    {
+      "title": "Stone Game VIII",
+      "slug": "stone-game-viii"
+    },
+    {
+      "title": "Sum Game",
+      "slug": "sum-game"
+    },
+    {
+      "title": "Check Divisibility by Digit Sum and Product",
+      "slug": "check-divisibility-by-digit-sum-and-product"
+    },
+    {
+      "title": "Kth Smallest Amount With Single Denomination Combination",
+      "slug": "kth-smallest-amount-with-single-denomination-combination"
+    }
   ]
 }

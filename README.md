@@ -51,12 +51,12 @@
   <br />
 <!-- LEETCODE_RECENT_START -->
 <p align="center">
-<a href="https://leetcode.com/problems/distribute-elements-into-two-arrays-i/"><code>Distribute Elements Into Two Arrays I</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/cinema-seat-allocation/"><code>Cinema Seat Allocation</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/find-the-largest-almost-missing-integer/"><code>Find the Largest Almost Missing Integer</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-v/"><code>Stone Game V</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-ix/"><code>Stone Game IX</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/longest-palindromic-substring/"><code>Longest Palindromic Substring</code></a>
+<a href="https://leetcode.com/problems/lexicographically-smallest-palindromic-permutation-greater-than-target"><code>Lexicographically Smallest Palindromic Permutation Greater Than Target</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/lexicographically-smallest-permutation-greater-than-target"><code>Lexicographically Smallest Permutation Greater Than Target</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/shortest-and-lexicographically-smallest-beautiful-string"><code>Shortest and Lexicographically Smallest Beautiful String</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/smallest-missing-multiple-of-k"><code>Smallest Missing Multiple of K</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-viii"><code>Stone Game VIII</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/sum-game"><code>Sum Game</code></a>
 </p>
 <!-- LEETCODE_RECENT_END -->
 </details>
