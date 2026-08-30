@@ -21,6 +21,7 @@ import pathlib
 import re
 import sys
 import time
+import urllib.error
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -36,8 +37,12 @@ USER_AGENTS = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15",
     "github-profile-stats/1.0",
 )
-RETRIES = 3
-RETRY_DELAY_SECONDS = 10
+# Keep retries short. LeetCode mostly either answers quickly or rejects the
+# runner with a fast 403; long backoffs only turn a fast rejection into a
+# minutes-long stalled job for no benefit.
+RETRIES = 2
+RETRY_DELAY_SECONDS = 3
+REQUEST_TIMEOUT_SECONDS = 20
 
 PROFILE_QUERY = """
 query profile($username: String!) {
@@ -86,12 +91,32 @@ def _request(url: str, data: bytes | None, user_agent: str) -> bytes:
             "User-Agent": user_agent,
         },
     )
-    with urllib.request.urlopen(request, timeout=30) as response:
+    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return response.read()
 
 
+def _is_transient(error: BaseException) -> bool:
+    """Return True only for errors worth retrying.
+
+    LeetCode rejecting a data-center IP comes back as HTTP 403 (or a TLS EOF
+    reset). Those are NOT transient — we stop immediately instead of sleeping
+    for minutes and then failing anyway.
+    """
+    if isinstance(error, urllib.error.HTTPError):
+        # 429 too many requests could clear, but we hit it rarely via this job.
+        return error.code in (429, 502, 503, 504)
+    # A genuine timeout is worth retrying. TLS resets, connection resets and
+    # refusals are IP-level blocks that retrying will never get past.
+    reason = getattr(error, "reason", None)
+    return isinstance(error, TimeoutError) or isinstance(reason, TimeoutError)
+
+
 def _request_with_retries(url: str, data: bytes | None = None) -> bytes:
-    """Try every user agent, with backoff, so transient or UA-based blocks recover."""
+    """Try every user agent, with backoff, so transient/UA-based blocks recover.
+
+    Fails fast on definitive rejections (e.g. HTTP 403 from LeetCode), so a
+    blocked job doesn't stall for minutes before the workflow gives up.
+    """
     attempts = USER_AGENTS * RETRIES
     last_error: Exception | None = None
     for attempt, user_agent in enumerate(attempts):
@@ -99,7 +124,7 @@ def _request_with_retries(url: str, data: bytes | None = None) -> bytes:
             return _request(url, data, user_agent)
         except Exception as error:  # URLError, HTTPError, TLS resets, timeouts...
             last_error = error
-            if attempt + 1 < len(attempts):
+            if _is_transient(error) and attempt + 1 < len(attempts):
                 time.sleep(RETRY_DELAY_SECONDS)
     raise RuntimeError(f"LeetCode unreachable after {len(attempts)} attempts: {last_error}")
 
@@ -116,38 +141,33 @@ def keyed(items: list[dict], value: str = "count") -> dict:
     return {item["difficulty"]: item.get(value, 0) for item in items}
 
 
-def fetch(current: dict) -> dict:
-    try:
-        profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
-        skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
-        recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
-    except Exception as error:
-        print(f"GraphQL fetch failed ({error}); falling back to the public profile page", file=sys.stderr)
-        return parse_profile_page(current)
-    user = profile_data["matchedUser"]
-    stats = user["submitStatsGlobal"]
-    accepted = keyed(stats["acSubmissionNum"], "submissions")
-    submitted = keyed(stats["totalSubmissionNum"], "submissions")
-    calendar = skills_data["matchedUser"]["userCalendar"]
+def _build_from_graphql(profile_data: dict, skills_data: dict, recent_data: dict, current: dict) -> dict:
+    user = profile_data.get("matchedUser")
+    stats = (user or {}).get("submitStatsGlobal")
+    if not user or not stats:
+        raise RuntimeError("GraphQL response is missing matchedUser/submitStatsGlobal")
+    accepted = keyed(stats.get("acSubmissionNum") or [], "submissions")
+    submitted = keyed(stats.get("totalSubmissionNum") or [], "submissions")
+    calendar = ((skills_data.get("matchedUser") or {}).get("userCalendar")) or {}
     submissions_by_day = json.loads(calendar.get("submissionCalendar") or "{}")
     badges = user.get("badges") or []
     newest_badge = max(badges, key=lambda badge: int(badge.get("creationDate") or 0), default={})
 
     return {
         "username": USERNAME,
-        "ranking": user["profile"].get("ranking", current.get("ranking", 0)),
-        "solved": keyed(stats["acSubmissionNum"]),
-        "questions": keyed(profile_data["allQuestionsCount"]),
+        "ranking": (user.get("profile") or {}).get("ranking", current.get("ranking", 0)),
+        "solved": keyed(stats.get("acSubmissionNum") or []),
+        "questions": keyed(profile_data.get("allQuestionsCount") or []),
         "beats": keyed(user.get("problemsSolvedBeatsStats") or [], "percentage"),
         "acceptance": round(100 * accepted.get("All", 0) / max(submitted.get("All", 1), 1), 2),
         "submissionsYear": sum(int(value) for value in submissions_by_day.values()),
         "activeDays": calendar.get("totalActiveDays", 0),
         "maxStreak": calendar.get("streak", 0),
         "community": {
-            "views": user["profile"].get("postViewCount", 0),
-            "solutions": user["profile"].get("solutionCount", 0),
-            "discuss": user["profile"].get("categoryDiscussCount", 0),
-            "reputation": user["profile"].get("reputation", 0),
+            "views": (user.get("profile") or {}).get("postViewCount", 0),
+            "solutions": (user.get("profile") or {}).get("solutionCount", 0),
+            "discuss": (user.get("profile") or {}).get("categoryDiscussCount", 0),
+            "reputation": (user.get("profile") or {}).get("reputation", 0),
         },
         "languages": [
             {"name": item["languageName"], "solved": item["problemsSolved"]}
@@ -156,7 +176,7 @@ def fetch(current: dict) -> dict:
         "skills": {
             level.title(): [
                 {"name": item["tagName"], "solved": item["problemsSolved"]}
-                for item in skills_data["matchedUser"]["tagProblemCounts"].get(level, [])
+                for item in ((skills_data.get("matchedUser") or {}).get("tagProblemCounts") or {}).get(level, [])
             ]
             for level in ("advanced", "intermediate", "fundamental")
         },
@@ -166,6 +186,17 @@ def fetch(current: dict) -> dict:
             for item in recent_data.get("recentAcSubmissionList") or []
         ],
     }
+
+
+def fetch(current: dict) -> dict:
+    try:
+        profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
+        skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
+        recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
+        return _build_from_graphql(profile_data, skills_data, recent_data, current)
+    except Exception as error:
+        print(f"GraphQL fetch failed ({error}); falling back to the public profile page", file=sys.stderr)
+        return parse_profile_page(current)
 
 
 def _collect(node: object, wanted: set[str], found: dict[str, list]) -> None:
@@ -415,20 +446,28 @@ def write_recent(data: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--offline", action="store_true", help="render from checked-in data only")
+    parser.add_argument(
+        "--fail-hard",
+        action="store_true",
+        help="exit non-zero if LeetCode cannot be reached instead of keeping the last good snapshot",
+    )
     args = parser.parse_args()
     data = json.loads(DATA_PATH.read_text())
     if not args.offline:
         try:
             data = fetch(data)
         except Exception as error:
-            print(f"ERROR: LeetCode refresh failed: {error}", file=sys.stderr)
+            print(f"WARNING: LeetCode refresh failed: {error}", file=sys.stderr)
             print(
-                "ERROR: last good snapshot left untouched; exiting non-zero so the run is visibly red.",
+                "WARNING: keeping the last good snapshot so this run stays green; "
+                "the profile is never left broken by a third-party outage.",
                 file=sys.stderr,
             )
-            raise SystemExit(1)
-        DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-        print("Fetched current public LeetCode statistics")
+            if args.fail_hard:
+                raise SystemExit(1)
+        else:
+            DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+            print("Fetched current public LeetCode statistics")
     (ROOT / "profile" / "leetcode-overview.svg").write_text(overview_svg(data))
     (ROOT / "profile" / "leetcode-skills.svg").write_text(skills_svg(data))
     write_recent(data)
