@@ -51,12 +51,12 @@
   <br />
 <!-- LEETCODE_RECENT_START -->
 <p align="center">
-<a href="https://leetcode.com/problems/lexicographically-smallest-palindromic-permutation-greater-than-target"><code>Lexicographically Smallest Palindromic Permutation Greater Than Target</code></a>
+<a href="https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points"><code>Find the Minimum and Maximum Number of Nodes Between Critical Points</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/removing-minimum-and-maximum-from-array"><code>Removing Minimum and Maximum From Array</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements"><code>Make Lexicographically Smallest Array by Swapping Elements</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/lexicographically-smallest-palindromic-permutation-greater-than-target"><code>Lexicographically Smallest Palindromic Permutation Greater Than Target</code></a>
  &nbsp;·&nbsp; <a href="https://leetcode.com/problems/lexicographically-smallest-permutation-greater-than-target"><code>Lexicographically Smallest Permutation Greater Than Target</code></a>
  &nbsp;·&nbsp; <a href="https://leetcode.com/problems/shortest-and-lexicographically-smallest-beautiful-string"><code>Shortest and Lexicographically Smallest Beautiful String</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/smallest-missing-multiple-of-k"><code>Smallest Missing Multiple of K</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/stone-game-viii"><code>Stone Game VIII</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/sum-game"><code>Sum Game</code></a>
 </p>
 <!-- LEETCODE_RECENT_END -->
 </details>

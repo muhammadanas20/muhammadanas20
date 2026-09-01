@@ -5,11 +5,16 @@ The checked-in JSON is also a fallback: if LeetCode is temporarily unavailable, 
 last good cards remain usable and the profile never depends on a third-party image
 server at page-view time.
 
-Network strategy: the GraphQL endpoint is tried first (with retries and rotating
-user agents). If it keeps failing, the public profile page is scraped instead,
-because LeetCode sometimes blocks data-center IPs on /graphql/ while the HTML page
-still loads. If both paths fail, the script exits non-zero so the workflow run is
-visibly red instead of quietly keeping stale cards and reporting success.
+Network strategy: sources are tried in order until one returns real data —
+LeetCode's GraphQL endpoint, then two community mirrors, then the server-rendered
+profile page. LeetCode blocks most data-center IPs (GitHub Actions runners
+included) on both /graphql/ and the HTML page, so the mirrors are what usually
+keeps the daily job working. A partial answer is merged onto the last good
+snapshot, so a mirror that omits skills or badges never blanks a card.
+
+If every source fails, the last good snapshot is still rendered (the README never
+breaks) but `--fail-hard` makes the process exit non-zero so the workflow run goes
+visibly red instead of silently reporting success with month-old numbers.
 """
 from __future__ import annotations
 
@@ -17,6 +22,7 @@ import argparse
 import html
 import json
 import math
+import os
 import pathlib
 import re
 import sys
@@ -29,6 +35,13 @@ DATA_PATH = ROOT / "profile" / "leetcode-data.json"
 USERNAME = "muhammadanas20"
 ENDPOINT = "https://leetcode.com/graphql/"
 PROFILE_PAGE = f"https://leetcode.com/u/{USERNAME}/"
+
+# LeetCode blocks most data-center IPs (GitHub Actions runners included) on both
+# /graphql/ and the profile page, so a CI-only run that talks to leetcode.com
+# directly will almost always fail. These community mirrors run on hosts LeetCode
+# still answers, and are used as fallbacks before we give up.
+MIRROR_FAISAL = f"https://leetcode-api-faisalshohag.vercel.app/{USERNAME}"
+MIRROR_ALFA = "https://alfa-leetcode-api.onrender.com"
 
 # LeetCode's edge is inconsistent about which clients it lets through, so rotate a
 # few user agents on every retry attempt.
@@ -80,7 +93,7 @@ query recent($username: String!, $limit: Int!) {
 """
 
 
-def _request(url: str, data: bytes | None, user_agent: str) -> bytes:
+def _request(url: str, data: bytes | None, user_agent: str, timeout: int | None = None) -> bytes:
     request = urllib.request.Request(
         url,
         data=data,
@@ -91,7 +104,7 @@ def _request(url: str, data: bytes | None, user_agent: str) -> bytes:
             "User-Agent": user_agent,
         },
     )
-    with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+    with urllib.request.urlopen(request, timeout=timeout or REQUEST_TIMEOUT_SECONDS) as response:
         return response.read()
 
 
@@ -111,7 +124,7 @@ def _is_transient(error: BaseException) -> bool:
     return isinstance(error, TimeoutError) or isinstance(reason, TimeoutError)
 
 
-def _request_with_retries(url: str, data: bytes | None = None) -> bytes:
+def _request_with_retries(url: str, data: bytes | None = None, timeout: int | None = None) -> bytes:
     """Try every user agent, with backoff, so transient/UA-based blocks recover.
 
     Fails fast on definitive rejections (e.g. HTTP 403 from LeetCode), so a
@@ -121,12 +134,16 @@ def _request_with_retries(url: str, data: bytes | None = None) -> bytes:
     last_error: Exception | None = None
     for attempt, user_agent in enumerate(attempts):
         try:
-            return _request(url, data, user_agent)
+            return _request(url, data, user_agent, timeout)
         except Exception as error:  # URLError, HTTPError, TLS resets, timeouts...
             last_error = error
             if _is_transient(error) and attempt + 1 < len(attempts):
                 time.sleep(RETRY_DELAY_SECONDS)
-    raise RuntimeError(f"LeetCode unreachable after {len(attempts)} attempts: {last_error}")
+    raise RuntimeError(f"{url} unreachable after {len(attempts)} attempts: {last_error}")
+
+
+def _get_json(url: str, timeout: int | None = None) -> dict:
+    return json.loads(_request_with_retries(url, timeout=timeout))
 
 
 def graphql(query: str, variables: dict) -> dict:
@@ -188,15 +205,232 @@ def _build_from_graphql(profile_data: dict, skills_data: dict, recent_data: dict
     }
 
 
-def fetch(current: dict) -> dict:
+def source_graphql(current: dict) -> dict:
+    """Primary source: LeetCode's own GraphQL endpoint (richest payload)."""
+    profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
+    skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
+    recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
+    return _build_from_graphql(profile_data, skills_data, recent_data, current)
+
+
+def _dig(payload: object, key: str, predicate=lambda value: bool(value)):
+    """Find `key` anywhere in a nested payload.
+
+    Mirrors wrap the same data differently ({"data":{"matchedUser":{...}}}, or
+    flat), so searching by key name keeps the parsers shape-agnostic.
+    """
+    found: dict[str, list] = {}
+    _collect(payload, {key}, found)
+    return _pick(found.get(key, []), predicate)
+
+
+def _difficulty_map(items: list, key: str = "count") -> dict:
+    return {
+        item["difficulty"]: item.get(key, 0)
+        for item in items or []
+        if isinstance(item, dict) and "difficulty" in item
+    }
+
+
+def source_mirror_faisal(current: dict) -> dict:
+    """Fallback: a community mirror that proxies the same GraphQL data.
+
+    It exposes solve counts, ranking, the submission calendar and recent ACs but
+    not skills/languages/badges, so those fall back to the last good snapshot via
+    merge_snapshot().
+    """
+    payload = _get_json(MIRROR_FAISAL, timeout=30)
+    if not isinstance(payload, dict) or "totalSolved" not in payload:
+        raise RuntimeError("mirror payload is missing totalSolved")
+
+    stats = payload.get("matchedUserStats") or {}
+    accepted = _difficulty_map(stats.get("acSubmissionNum"), "submissions")
+    submitted = _difficulty_map(stats.get("totalSubmissionNum"), "submissions")
+    calendar = payload.get("submissionCalendar") or {}
+    if isinstance(calendar, str):
+        calendar = json.loads(calendar or "{}")
+
+    acceptance = (
+        round(100 * accepted.get("All", 0) / max(submitted.get("All", 1), 1), 2)
+        if accepted
+        else current.get("acceptance", 0)
+    )
+    recent = [
+        {"title": item["title"], "slug": item["titleSlug"]}
+        for item in payload.get("recentSubmissions") or []
+        if isinstance(item, dict)
+        and item.get("titleSlug")
+        and item.get("statusDisplay", "Accepted") == "Accepted"
+    ]
+    # The mirror can repeat the same problem across resubmissions; keep first hit.
+    deduped, seen = [], set()
+    for item in recent:
+        if item["slug"] not in seen:
+            seen.add(item["slug"])
+            deduped.append(item)
+
+    return {
+        "username": USERNAME,
+        "ranking": payload.get("ranking") or current.get("ranking", 0),
+        "solved": {
+            "All": payload.get("totalSolved", 0),
+            "Easy": payload.get("easySolved", 0),
+            "Medium": payload.get("mediumSolved", 0),
+            "Hard": payload.get("hardSolved", 0),
+        },
+        "questions": {
+            "All": payload.get("totalQuestions", 0),
+            "Easy": payload.get("totalEasy", 0),
+            "Medium": payload.get("totalMedium", 0),
+            "Hard": payload.get("totalHard", 0),
+        },
+        "acceptance": acceptance,
+        "submissionsYear": sum(int(value) for value in calendar.values()) if calendar else 0,
+        "activeDays": len([v for v in calendar.values() if int(v) > 0]),
+        "recent": deduped[:8],
+    }
+
+
+def source_mirror_alfa(current: dict) -> dict:
+    """Fallback: a mirror that also exposes skills, languages and beats stats."""
+    profile = _get_json(f"{MIRROR_ALFA}/userProfile/{USERNAME}", timeout=60)
+    if not isinstance(profile, dict) or "totalSolved" not in profile:
+        raise RuntimeError("alfa mirror payload is missing totalSolved")
+
+    calendar = profile.get("submissionCalendar") or {}
+    if isinstance(calendar, str):
+        calendar = json.loads(calendar or "{}")
+    stats = profile.get("matchedUserStats") or {}
+    accepted = _difficulty_map(stats.get("acSubmissionNum"), "submissions")
+    submitted = _difficulty_map(stats.get("totalSubmissionNum"), "submissions")
+
+    data = {
+        "username": USERNAME,
+        "ranking": profile.get("ranking") or current.get("ranking", 0),
+        "solved": {
+            "All": profile.get("totalSolved", 0),
+            "Easy": profile.get("easySolved", 0),
+            "Medium": profile.get("mediumSolved", 0),
+            "Hard": profile.get("hardSolved", 0),
+        },
+        "questions": {
+            "All": profile.get("totalQuestions", 0),
+            "Easy": profile.get("totalEasy", 0),
+            "Medium": profile.get("totalMedium", 0),
+            "Hard": profile.get("totalHard", 0),
+        },
+        "acceptance": (
+            round(100 * accepted.get("All", 0) / max(submitted.get("All", 1), 1), 2)
+            if accepted
+            else current.get("acceptance", 0)
+        ),
+        "submissionsYear": sum(int(value) for value in calendar.values()) if calendar else 0,
+        "activeDays": len([v for v in calendar.values() if int(v) > 0]),
+        "community": {
+            "views": current.get("community", {}).get("views", 0),
+            "solutions": current.get("community", {}).get("solutions", 0),
+            "discuss": current.get("community", {}).get("discuss", 0),
+            "reputation": profile.get("reputation", current.get("community", {}).get("reputation", 0)),
+        },
+    }
+
+    # These extras are best-effort: a partial refresh still beats a stale card.
     try:
-        profile_data = graphql(PROFILE_QUERY, {"username": USERNAME})
-        skills_data = graphql(SKILLS_QUERY, {"username": USERNAME})
-        recent_data = graphql(RECENT_QUERY, {"username": USERNAME, "limit": 8})
-        return _build_from_graphql(profile_data, skills_data, recent_data, current)
+        skills = _get_json(f"{MIRROR_ALFA}/skillStats/{USERNAME}", timeout=45)
+        tags = _dig(skills, "tagProblemCounts", lambda v: isinstance(v, dict) and "fundamental" in v) or {}
+        parsed = {
+            level.title(): [
+                {"name": item["tagName"], "solved": item["problemsSolved"]}
+                for item in tags.get(level, [])
+            ]
+            for level in ("advanced", "intermediate", "fundamental")
+        }
+        if any(parsed.values()):
+            data["skills"] = parsed
     except Exception as error:
-        print(f"GraphQL fetch failed ({error}); falling back to the public profile page", file=sys.stderr)
-        return parse_profile_page(current)
+        print(f"  · alfa skillStats unavailable ({error})", file=sys.stderr)
+
+    try:
+        langs = _get_json(f"{MIRROR_ALFA}/languageStats?username={USERNAME}", timeout=45)
+        items = _dig(langs, "languageProblemCount", lambda v: isinstance(v, list) and v) or []
+        parsed_langs = [
+            {"name": item["languageName"], "solved": item["problemsSolved"]} for item in items
+        ]
+        if parsed_langs:
+            data["languages"] = sorted(parsed_langs, key=lambda i: i["solved"], reverse=True)
+    except Exception as error:
+        print(f"  · alfa languageStats unavailable ({error})", file=sys.stderr)
+
+    try:
+        acs = _get_json(f"{MIRROR_ALFA}/{USERNAME}/acSubmission?limit=15", timeout=45)
+        items = acs if isinstance(acs, list) else _dig(
+            acs, "submission", lambda v: isinstance(v, list) and v
+        )
+        deduped, seen = [], set()
+        for item in items or []:
+            slug = item.get("titleSlug")
+            if slug and slug not in seen:
+                seen.add(slug)
+                deduped.append({"title": item["title"], "slug": slug})
+        if deduped:
+            data["recent"] = deduped[:8]
+    except Exception as error:
+        print(f"  · alfa acSubmission unavailable ({error})", file=sys.stderr)
+
+    return data
+
+
+def source_profile_page(current: dict) -> dict:
+    """Last resort: scrape the server-rendered profile page payload."""
+    return parse_profile_page(current)
+
+
+SOURCES = (
+    ("leetcode graphql", source_graphql),
+    ("mirror: faisalshohag", source_mirror_faisal),
+    ("mirror: alfa-leetcode-api", source_mirror_alfa),
+    ("leetcode profile page", source_profile_page),
+)
+
+
+def merge_snapshot(current: dict, fresh: dict) -> dict:
+    """Overlay a (possibly partial) fetch onto the last good snapshot.
+
+    Mirrors do not expose every field, so anything missing — or obviously empty,
+    like a zeroed total — keeps its previous value instead of blanking a card.
+    """
+    merged = json.loads(json.dumps(current))
+    for key, value in fresh.items():
+        if value in (None, "", [], {}):
+            continue
+        if key in ("solved", "questions") and not value.get("All"):
+            continue
+        if isinstance(value, dict) and isinstance(merged.get(key), dict):
+            merged[key].update(
+                {k: v for k, v in value.items() if v not in (None, "", [], {})}
+            )
+        else:
+            merged[key] = value
+    return merged
+
+
+def fetch(current: dict) -> dict:
+    """Try every source in order; return the first one that yields real data."""
+    errors = []
+    for name, source in SOURCES:
+        try:
+            print(f"Trying source: {name}", file=sys.stderr)
+            data = merge_snapshot(current, source(current))
+            if not data.get("solved", {}).get("All"):
+                raise RuntimeError("source returned no solved count")
+            data["source"] = name
+            data["updatedAt"] = time.strftime("%Y-%m-%d", time.gmtime())
+            print(f"Source succeeded: {name}", file=sys.stderr)
+            return data
+        except Exception as error:
+            print(f"  · {name} failed: {error}", file=sys.stderr)
+            errors.append(f"{name}: {error}")
+    raise RuntimeError("all LeetCode sources failed -> " + " | ".join(errors))
 
 
 def _collect(node: object, wanted: set[str], found: dict[str, list]) -> None:
@@ -362,6 +596,12 @@ def pill(x: int, y: int, width: int, label: str, count: object, color: str) -> s
 
 def overview_svg(data: dict) -> str:
     solved, totals = data["solved"], data["questions"]
+    updated = data.get("updatedAt")
+    subtitle = (
+        f"Static, repository-hosted snapshot · updated {updated}"
+        if updated
+        else "Static, repository-hosted snapshot · refreshed daily"
+    )
     total = solved.get("All", 0)
     radius, circumference = 57, 2 * math.pi * 57
     progress = total / max(totals.get("All", 1), 1)
@@ -390,7 +630,7 @@ def overview_svg(data: dict) -> str:
 <style>.title{{font:700 23px 'Segoe UI',Arial,sans-serif;fill:#f8fafc}}.sub{{font:400 12px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}}.eyebrow{{font:600 9px 'Segoe UI',Arial,sans-serif;letter-spacing:1.2px;fill:#8290aa}}.metric{{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#f1f5f9}}.label{{font:600 12px 'Segoe UI',Arial,sans-serif;fill:#cbd5e1}}.value{{font:500 11px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}}.big{{font:800 34px 'Segoe UI',Arial,sans-serif;fill:#f8fafc}}.small{{font:500 11px 'Segoe UI',Arial,sans-serif;fill:#94a3b8}}</style>
 <defs><linearGradient id="bg" x1="0" y1="0" x2="900" y2="350"><stop stop-color="#0b1020"/><stop offset="1" stop-color="#121a31"/></linearGradient><linearGradient id="accent"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
 <rect x=".5" y=".5" width="899" height="349" rx="18" fill="url(#bg)" stroke="#293552"/><circle cx="846" cy="32" r="95" fill="#8b5cf6" opacity=".055"/><circle cx="50" cy="350" r="110" fill="#22d3ee" opacity=".04"/>
-<g transform="translate(32 35)"><rect width="34" height="34" rx="9" fill="#ffa116"/><path d="M22 8 12 17c-4 4-1 10 4 10h9M14 12l5-5" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><text x="48" y="20" class="title">LeetCode · problem-solving signal</text><text x="48" y="39" class="sub">Static, repository-hosted snapshot · refreshed daily</text></g>
+<g transform="translate(32 35)"><rect width="34" height="34" rx="9" fill="#ffa116"/><path d="M22 8 12 17c-4 4-1 10 4 10h9M14 12l5-5" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><text x="48" y="20" class="title">LeetCode · problem-solving signal</text><text x="48" y="39" class="sub">{esc(subtitle)}</text></g>
 <g transform="translate(112 198)"><circle r="57" fill="none" stroke="#202a44" stroke-width="10"/><circle r="57" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="{circumference:.1f}" stroke-dashoffset="{circumference * (1-progress):.1f}" transform="rotate(-90)"/><text class="big" y="2" text-anchor="middle">{total}</text><text class="small" y="21" text-anchor="middle">SOLVED</text><text class="small" y="78" text-anchor="middle">of {totals.get('All', 0):,}</text></g>
 {''.join(bars)}<path d="M610 105v205" stroke="#293552"/>{metric_svg}
 <g transform="translate(258 292)"><rect width="330" height="38" rx="11" fill="#ffa116" fill-opacity=".10" stroke="#ffa116" stroke-opacity=".30"/><text x="14" y="15" class="eyebrow" fill="#fbbf24">LATEST BADGE</text><text x="14" y="30" class="label">{esc(data['badge'])}</text></g></svg>'''
@@ -443,6 +683,16 @@ def write_recent(data: dict) -> None:
         readme_path.write_text(before + "\n".join(lines) + after)
 
 
+def annotate(level: str, message: str) -> None:
+    """Emit a GitHub Actions annotation (and job summary line) when running in CI."""
+    print(f"::{level}::{message}", file=sys.stderr)
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        icon = {"error": "❌", "warning": "⚠️", "notice": "✅"}.get(level, "•")
+        with open(summary, "a", encoding="utf-8") as handle:
+            handle.write(f"{icon} {message}\n\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--offline", action="store_true", help="render from checked-in data only")
@@ -451,27 +701,47 @@ def main() -> None:
         action="store_true",
         help="exit non-zero if LeetCode cannot be reached instead of keeping the last good snapshot",
     )
+    parser.add_argument(
+        "--keep-stale",
+        action="store_true",
+        help="opt out of the CI default and stay green when every source fails",
+    )
     args = parser.parse_args()
+    # In CI a failed refresh must be visible: a green run that silently re-commits
+    # a month-old snapshot is exactly the failure mode this guards against.
+    fail_hard = args.fail_hard or (
+        os.environ.get("GITHUB_ACTIONS") == "true" and not args.keep_stale
+    )
     data = json.loads(DATA_PATH.read_text())
+    refresh_failed = None
+
     if not args.offline:
         try:
             data = fetch(data)
         except Exception as error:
-            print(f"WARNING: LeetCode refresh failed: {error}", file=sys.stderr)
-            print(
-                "WARNING: keeping the last good snapshot so this run stays green; "
-                "the profile is never left broken by a third-party outage.",
-                file=sys.stderr,
+            refresh_failed = str(error)
+            annotate(
+                "error",
+                "LeetCode refresh failed, cards still show the "
+                f"{data.get('updatedAt', 'last known')} snapshot: {error}",
             )
-            if args.fail_hard:
-                raise SystemExit(1)
         else:
             DATA_PATH.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-            print("Fetched current public LeetCode statistics")
+            annotate(
+                "notice",
+                f"LeetCode refreshed from {data['source']}: "
+                f"{data['solved'].get('All', 0)} solved, rank #{data['ranking']:,}.",
+            )
+
     (ROOT / "profile" / "leetcode-overview.svg").write_text(overview_svg(data))
     (ROOT / "profile" / "leetcode-skills.svg").write_text(skills_svg(data))
     write_recent(data)
     print("Rendered LeetCode profile assets")
+
+    # Always render first: even a failed refresh leaves a valid, committable card.
+    # Then fail loudly so a silently stale profile can never look green.
+    if refresh_failed and fail_hard:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
