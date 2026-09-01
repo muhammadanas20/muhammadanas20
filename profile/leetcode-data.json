@@ -1,27 +1,27 @@
 {
   "username": "muhammadanas20",
-  "ranking": 1319449,
+  "ranking": 1294819,
   "solved": {
-    "All": 129,
+    "All": 132,
     "Easy": 57,
-    "Medium": 58,
+    "Medium": 61,
     "Hard": 14
   },
   "questions": {
-    "All": 4033,
-    "Easy": 961,
-    "Medium": 2105,
-    "Hard": 967
+    "All": 4041,
+    "Easy": 962,
+    "Medium": 2109,
+    "Hard": 970
   },
   "beats": {
-    "Easy": 79.31,
-    "Medium": 76.46,
-    "Hard": 70.15
+    "Easy": 79.3,
+    "Medium": 77.3,
+    "Hard": 70.14
   },
-  "acceptance": 90.83,
-  "submissionsYear": 218,
-  "activeDays": 65,
-  "maxStreak": 59,
+  "acceptance": 90.95,
+  "submissionsYear": 221,
+  "activeDays": 68,
+  "maxStreak": 62,
   "community": {
     "views": 30,
     "solutions": 5,
@@ -31,7 +31,7 @@
   "languages": [
     {
       "name": "C++",
-      "solved": 110
+      "solved": 113
     },
     {
       "name": "C",
@@ -89,6 +89,18 @@
   "badge": "50 Days Badge 2026",
   "recent": [
     {
+      "title": "Find the Minimum and Maximum Number of Nodes Between Critical Points",
+      "slug": "find-the-minimum-and-maximum-number-of-nodes-between-critical-points"
+    },
+    {
+      "title": "Removing Minimum and Maximum From Array",
+      "slug": "removing-minimum-and-maximum-from-array"
+    },
+    {
+      "title": "Make Lexicographically Smallest Array by Swapping Elements",
+      "slug": "make-lexicographically-smallest-array-by-swapping-elements"
+    },
+    {
       "title": "Lexicographically Smallest Palindromic Permutation Greater Than Target",
       "slug": "lexicographically-smallest-palindromic-permutation-greater-than-target"
     },
@@ -107,18 +119,8 @@
     {
       "title": "Stone Game VIII",
       "slug": "stone-game-viii"
-    },
-    {
-      "title": "Sum Game",
-      "slug": "sum-game"
-    },
-    {
-      "title": "Check Divisibility by Digit Sum and Product",
-      "slug": "check-divisibility-by-digit-sum-and-product"
-    },
-    {
-      "title": "Kth Smallest Amount With Single Denomination Combination",
-      "slug": "kth-smallest-amount-with-single-denomination-combination"
     }
-  ]
+  ],
+  "source": "leetcode profile page",
+  "updatedAt": "2026-09-01"
 }
