@@ -1,9 +1,9 @@
 {
   "username": "muhammadanas20",
-  "ranking": 1294819,
+  "ranking": 1295876,
   "solved": {
-    "All": 132,
-    "Easy": 57,
+    "All": 133,
+    "Easy": 58,
     "Medium": 61,
     "Hard": 14
   },
@@ -18,9 +18,9 @@
     "Medium": 77.3,
     "Hard": 70.14
   },
-  "acceptance": 90.95,
-  "submissionsYear": 221,
-  "activeDays": 68,
+  "acceptance": 90.99,
+  "submissionsYear": 222,
+  "activeDays": 69,
   "maxStreak": 62,
   "community": {
     "views": 30,
@@ -89,6 +89,10 @@
   "badge": "50 Days Badge 2026",
   "recent": [
     {
+      "title": "Construct Uniform Parity Array I",
+      "slug": "construct-uniform-parity-array-i"
+    },
+    {
       "title": "Find the Minimum and Maximum Number of Nodes Between Critical Points",
       "slug": "find-the-minimum-and-maximum-number-of-nodes-between-critical-points"
     },
@@ -115,10 +119,6 @@
     {
       "title": "Smallest Missing Multiple of K",
       "slug": "smallest-missing-multiple-of-k"
-    },
-    {
-      "title": "Stone Game VIII",
-      "slug": "stone-game-viii"
     }
   ],
   "source": "mirror: faisalshohag",
