@@ -8,10 +8,10 @@
     "Hard": 14
   },
   "questions": {
-    "All": 4041,
+    "All": 4042,
     "Easy": 962,
     "Medium": 2109,
-    "Hard": 970
+    "Hard": 971
   },
   "beats": {
     "Easy": 79.3,
@@ -122,5 +122,5 @@
     }
   ],
   "source": "mirror: faisalshohag",
-  "updatedAt": "2026-09-01"
+  "updatedAt": "2026-09-02"
 }
