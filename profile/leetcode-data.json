@@ -45,23 +45,43 @@
   "skills": {
     "Advanced": [
       {
-        "name": "Dynamic Programming",
-        "solved": 17
-      },
-      {
         "name": "Game Theory",
         "solved": 9
       },
       {
+        "name": "Backtracking",
+        "solved": 1
+      },
+      {
+        "name": "Dynamic Programming",
+        "solved": 17
+      },
+      {
         "name": "Divide and Conquer",
         "solved": 5
+      },
+      {
+        "name": "Trie",
+        "solved": 1
+      },
+      {
+        "name": "Union-Find",
+        "solved": 1
+      },
+      {
+        "name": "Segment Tree",
+        "solved": 2
+      },
+      {
+        "name": "Monotonic Stack",
+        "solved": 3
+      },
+      {
+        "name": "Monotonic Queue",
+        "solved": 1
       }
     ],
     "Intermediate": [
-      {
-        "name": "Math",
-        "solved": 26
-      },
       {
         "name": "Tree",
         "solved": 21
@@ -69,20 +89,96 @@
       {
         "name": "Binary Tree",
         "solved": 20
+      },
+      {
+        "name": "Hash Table",
+        "solved": 20
+      },
+      {
+        "name": "Ordered Set",
+        "solved": 1
+      },
+      {
+        "name": "Graph Theory",
+        "solved": 1
+      },
+      {
+        "name": "Greedy",
+        "solved": 12
+      },
+      {
+        "name": "Binary Search",
+        "solved": 12
+      },
+      {
+        "name": "Depth-First Search",
+        "solved": 19
+      },
+      {
+        "name": "Breadth-First Search",
+        "solved": 8
+      },
+      {
+        "name": "Recursion",
+        "solved": 10
+      },
+      {
+        "name": "Sliding Window",
+        "solved": 5
+      },
+      {
+        "name": "Bit Manipulation",
+        "solved": 6
+      },
+      {
+        "name": "Math",
+        "solved": 27
+      },
+      {
+        "name": "Design",
+        "solved": 4
       }
     ],
     "Fundamental": [
       {
         "name": "Array",
-        "solved": 67
+        "solved": 70
       },
       {
-        "name": "Two Pointers",
-        "solved": 24
+        "name": "Matrix",
+        "solved": 5
       },
       {
         "name": "String",
         "solved": 22
+      },
+      {
+        "name": "Simulation",
+        "solved": 5
+      },
+      {
+        "name": "Enumeration",
+        "solved": 4
+      },
+      {
+        "name": "Sorting",
+        "solved": 13
+      },
+      {
+        "name": "Stack",
+        "solved": 15
+      },
+      {
+        "name": "Queue",
+        "solved": 3
+      },
+      {
+        "name": "Linked List",
+        "solved": 14
+      },
+      {
+        "name": "Two Pointers",
+        "solved": 25
       }
     ]
   },
@@ -121,6 +217,6 @@
       "slug": "smallest-missing-multiple-of-k"
     }
   ],
-  "source": "mirror: faisalshohag",
-  "updatedAt": "2026-09-17"
+  "source": "mirror: alfa-leetcode-api",
+  "updatedAt": "2026-09-18"
 }
