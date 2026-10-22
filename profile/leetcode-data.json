@@ -1,6 +1,6 @@
 {
   "username": "muhammadanas20",
-  "ranking": 1327545,
+  "ranking": 1328209,
   "solved": {
     "All": 133,
     "Easy": 58,
@@ -217,6 +217,6 @@
       "slug": "smallest-missing-multiple-of-k"
     }
   ],
-  "source": "mirror: faisalshohag",
+  "source": "mirror: alfa-leetcode-api",
   "updatedAt": "2026-10-22"
 }
