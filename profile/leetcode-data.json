@@ -1,10 +1,10 @@
 {
   "username": "muhammadanas20",
-  "ranking": 1334170,
+  "ranking": 1316423,
   "solved": {
-    "All": 133,
-    "Easy": 58,
-    "Medium": 61,
+    "All": 139,
+    "Easy": 61,
+    "Medium": 64,
     "Hard": 14
   },
   "questions": {
@@ -18,9 +18,9 @@
     "Medium": 77.3,
     "Hard": 70.14
   },
-  "acceptance": 90.99,
-  "submissionsYear": 222,
-  "activeDays": 69,
+  "acceptance": 90.87,
+  "submissionsYear": 230,
+  "activeDays": 70,
   "maxStreak": 62,
   "community": {
     "views": 30,
@@ -185,36 +185,36 @@
   "badge": "50 Days Badge 2026",
   "recent": [
     {
+      "title": "Lowest Common Ancestor of Deepest Leaves",
+      "slug": "lowest-common-ancestor-of-deepest-leaves"
+    },
+    {
+      "title": "Path Sum",
+      "slug": "path-sum"
+    },
+    {
+      "title": "Binary Tree Zigzag Level Order Traversal",
+      "slug": "binary-tree-zigzag-level-order-traversal"
+    },
+    {
+      "title": "Recover Binary Search Tree",
+      "slug": "recover-binary-search-tree"
+    },
+    {
+      "title": "Balanced Binary Tree",
+      "slug": "balanced-binary-tree"
+    },
+    {
+      "title": "Symmetric Tree",
+      "slug": "symmetric-tree"
+    },
+    {
       "title": "Construct Uniform Parity Array I",
       "slug": "construct-uniform-parity-array-i"
     },
     {
       "title": "Find the Minimum and Maximum Number of Nodes Between Critical Points",
       "slug": "find-the-minimum-and-maximum-number-of-nodes-between-critical-points"
-    },
-    {
-      "title": "Removing Minimum and Maximum From Array",
-      "slug": "removing-minimum-and-maximum-from-array"
-    },
-    {
-      "title": "Make Lexicographically Smallest Array by Swapping Elements",
-      "slug": "make-lexicographically-smallest-array-by-swapping-elements"
-    },
-    {
-      "title": "Lexicographically Smallest Palindromic Permutation Greater Than Target",
-      "slug": "lexicographically-smallest-palindromic-permutation-greater-than-target"
-    },
-    {
-      "title": "Lexicographically Smallest Permutation Greater Than Target",
-      "slug": "lexicographically-smallest-permutation-greater-than-target"
-    },
-    {
-      "title": "Shortest and Lexicographically Smallest Beautiful String",
-      "slug": "shortest-and-lexicographically-smallest-beautiful-string"
-    },
-    {
-      "title": "Smallest Missing Multiple of K",
-      "slug": "smallest-missing-multiple-of-k"
     }
   ],
   "source": "mirror: faisalshohag",

@@ -51,12 +51,12 @@
   <br />
 <!-- LEETCODE_RECENT_START -->
 <p align="center">
-<a href="https://leetcode.com/problems/construct-uniform-parity-array-i"><code>Construct Uniform Parity Array I</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points"><code>Find the Minimum and Maximum Number of Nodes Between Critical Points</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/removing-minimum-and-maximum-from-array"><code>Removing Minimum and Maximum From Array</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/make-lexicographically-smallest-array-by-swapping-elements"><code>Make Lexicographically Smallest Array by Swapping Elements</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/lexicographically-smallest-palindromic-permutation-greater-than-target"><code>Lexicographically Smallest Palindromic Permutation Greater Than Target</code></a>
- &nbsp;·&nbsp; <a href="https://leetcode.com/problems/lexicographically-smallest-permutation-greater-than-target"><code>Lexicographically Smallest Permutation Greater Than Target</code></a>
+<a href="https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves"><code>Lowest Common Ancestor of Deepest Leaves</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/path-sum"><code>Path Sum</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal"><code>Binary Tree Zigzag Level Order Traversal</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/recover-binary-search-tree"><code>Recover Binary Search Tree</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/balanced-binary-tree"><code>Balanced Binary Tree</code></a>
+ &nbsp;·&nbsp; <a href="https://leetcode.com/problems/symmetric-tree"><code>Symmetric Tree</code></a>
 </p>
 <!-- LEETCODE_RECENT_END -->
 </details>
