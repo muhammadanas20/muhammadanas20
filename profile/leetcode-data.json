@@ -84,15 +84,15 @@
     "Intermediate": [
       {
         "name": "Tree",
-        "solved": 21
+        "solved": 27
       },
       {
         "name": "Binary Tree",
-        "solved": 20
+        "solved": 26
       },
       {
         "name": "Hash Table",
-        "solved": 20
+        "solved": 21
       },
       {
         "name": "Ordered Set",
@@ -112,11 +112,11 @@
       },
       {
         "name": "Depth-First Search",
-        "solved": 19
+        "solved": 24
       },
       {
         "name": "Breadth-First Search",
-        "solved": 8
+        "solved": 12
       },
       {
         "name": "Recursion",
@@ -217,6 +217,6 @@
       "slug": "find-the-minimum-and-maximum-number-of-nodes-between-critical-points"
     }
   ],
-  "source": "mirror: faisalshohag",
-  "updatedAt": "2026-11-13"
+  "source": "mirror: alfa-leetcode-api",
+  "updatedAt": "2026-11-14"
 }
