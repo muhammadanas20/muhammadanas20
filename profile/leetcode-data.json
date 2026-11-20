@@ -19,8 +19,8 @@
     "Hard": 70.14
   },
   "acceptance": 90.87,
-  "submissionsYear": 215,
-  "activeDays": 67,
+  "submissionsYear": 214,
+  "activeDays": 66,
   "maxStreak": 62,
   "community": {
     "views": 30,
@@ -218,5 +218,5 @@
     }
   ],
   "source": "mirror: faisalshohag",
-  "updatedAt": "2026-11-19"
+  "updatedAt": "2026-11-20"
 }
